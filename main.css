@@ -1,0 +1,248 @@
+/* Definition of colors */
+@font-face {
+    font-family: helvetica;
+    src: url(font/Helvetica-Font/Helvetica.ttf);
+}
+body {
+    /* text colors */
+    --text-white: #ffffff;
+    --text-dark: #000000;
+
+    /* background colors */
+    --bg-grey-light: #fff;
+    --bg-white: #ffffff;
+    --bg-blue-dark: #000000;
+    --bg-indigo: #6366f1;
+    --border-white: #fff;
+
+    /*
+ ...
+ */
+}
+
+.dark {
+    --text-white: #e6e6e6;
+    --text-dark: #ffffff;
+
+    --bg-grey-light: #000;
+    --bg-white: #22395d;
+    --bg-blue-dark: rgba(0, 0, 0, 1);
+    --bg-indigo: #7577e1;
+    --border-white: #000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Definition of colors */
+body{
+    /* text colors */
+    --text-white: #ffffff;
+    --text-dark: #000;
+
+    --border-white: #000;
+
+    /* background colors */
+    --bg-grey-light: #fff;
+    --bg-white: #fff;
+    --bg-blue-dark: rgba(0, 0, 0, 1);
+    --bg-indigo: #6366f1;
+
+    font-family: 'helvetica', serif;
+    line-height: 1.7;
+    background-color: var(--bg-grey-light);
+}
+.dark {
+    --text-white: #e6e6e6;
+    --text-dark: #ffffff;
+    --bg-grey-light: #000000;
+    --bg-white: #22395d;
+    --bg-blue-dark: #000000;
+    --bg-indigo: #7577e1;
+    --border-white: #fff;
+}
+
+.container {
+    padding: 0 16px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.text-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--bg-white);
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+.paragraph {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+.heading {
+    margin-top: 48px;
+}
+
+.slogans-heading {
+    margin-top: 32px;
+    color: var(--text-dark);
+
+}
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+iframe {
+    margin : 0;
+    padding: 0;
+    border: none;
+    height: 100px;
+}
+img {
+    max-width:100%;
+}
+.button {
+    width: 200px;
+    padding: 5px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: var(--bg-indigo);
+    color: var(--text-white);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.navbar-custom {
+    padding: 16px;
+    border: 2px solid var(--border-white);
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.ml-1 {
+    margin-left: 80px;
+}
+#logoHeader {
+    width: 74.58px;
+    height: 76px;
+}
+.text-font-normal {
+    font-family: 'helvetica', serif;
+    font-style: normal;
+    color: var( --text-dark);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 41px;
+    text-align: right;
+}
+.group-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 24px;
+}
+.group-menu a {
+    text-decoration: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-grey-light);
+    z-index: 1;
+
+}
+.normal-box-margin {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.normal-box-padding {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.flex-row {
+    flex-direction: row;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.dropdown-content a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 115px;
+    width: 100%;
+    border: 2px solid var(--border-white);
+    border-top: 0;
+    text-align: left;
+}
+
+#idXSquare{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.show-dropdown-animation {
+    animation: showMenu 0.3s ease-in 0.0s ;
+}
+.show-menu-item-animation {
+    animation: showMenu 0.3s ease-in-out 0.0s;
+}
+@keyframes showMenuItem {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+@keyframes showMenu {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+.slogan {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 41px;
+    display: flex;
+}
+.model-list-show {
+    display: flex;
+    flex-direction: row;
+    height: 741.19px;
+    width: 117rem;
+    margin-top: 96px;
+
+}
+.model-list-show img {
+    object-fit: cover;
+}
+.model-list-show img:hover {
+    width: 436px;
+}
