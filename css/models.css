@@ -1,0 +1,71 @@
+.grid-model-container {
+    display: grid;
+    grid-template-areas:
+    'categories gender location measurements'
+    'categories-dropdown gender-dropdown location-dropdown measurements-dropdown'
+    ;
+}
+.icon-small {
+    width: 20px;
+    height: 20px;
+}
+.btn-icon-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-custom .paragraph {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.categories-area {
+    grid-area: categories;
+}
+.gender-area {
+    grid-area: gender;
+}
+.location-area {
+    grid-area: location;
+}
+.measurements-area {
+    grid-area: measurements;
+}
+.categories-dropdown-area {
+    grid-area: categories-dropdown;
+}
+.gender-dropdown-area {
+    grid-area: gender-dropdown;
+}
+.location-dropdown-area {
+    grid-area: location-dropdown;
+}
+.measurements-dropdown-area {
+    grid-area: measurements-dropdown;
+}
+.page-header {
+    margin-top: 48px;
+    display: flex;
+    align-items: flex-start;
+}
+.page-header h1 {
+    font-weight: 400;
+    font-size: 200px;
+    line-height: 230px;
+    /* identical to box height */
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+.page-header h6 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+    color: var(--text-dark);
+    padding: 0;
+    margin: 0;
+}
+.page-header > h6 {
+    margin: 24px;
+
+}

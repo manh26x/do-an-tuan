@@ -5,13 +5,12 @@ localStorage.setItem('theme', 'dark');
 localStorage.getItem('theme');
 // dark
 const toggle = document.getElementById("toggle");
-const refresh = document.getElementById("refresh");
 let theme = window.localStorage.getItem("theme");
 
 /* checks if the theme stored in localStorage is dark
 if yes apply the dark theme to the body */
 if (theme === "dark") document.body.classList.add("dark");
-
+let hashURL = location.pathname;
 // event listener stops when the change theme button is clicked
 toggle.addEventListener("click", () => {
     theme = window.localStorage.getItem("theme");
@@ -21,41 +20,58 @@ toggle.addEventListener("click", () => {
         $('#logoHeader').attr("src","images/icon_dark/logo-mark-dark.png");
         $('#idXSquare>img').attr("src","images/icon_dark/x-square-dark-icon.png");
         $('#idLogoHome').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
+        $('#logoFooter').attr('src', "images/icon_dark/logo-mark-dark.png");
+        $('#sloganFooter').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
+        $('#imgToggle').attr("src","images/icon_dark/mode-dark-icon.png");
     } else {
         window.localStorage.setItem("theme", "dark");
         $('#logoHeader').attr("src","images/icon_light/logo-mark-light.png");
         $('#idXSquare>img').attr("src","images/icon_light/x-square-light-icon.png");
         $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
-
+        $('#logoFooter').attr('src', "images/icon_light/logo-mark-light.png");
+        $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
+        $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
     }
 });
 $( document ).ready(function() {
     let defaultWith = $(window).width() - 16*2;
-    $('#myDropdown').css('width', defaultWith);
     $('#idLogoHome').css('width', defaultWith);
+    $('.dropdown-content').css('width', defaultWith);
     $('.full-width-img').css('width', defaultWith);
     $('.model-list-show').css('width', defaultWith);
-
-    let imgSlideWidth = defaultWith/12;
+    $('#idMoveHome').css('width', defaultWith);
+    $('.navbar-custom-content').css('width', defaultWith)
+    defaultWith -=4;
+    let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";
     let htmlValue = '';
     for(var i=1; i<=11; i++) {
-        htmlValue += '<img src="'+baseUrlImg+i+'.jpg" id="slide '+i+'" ' +
-            'width="'+imgSlideWidth+'px">'
+        if(i === 6) {
+            htmlValue += '<img class="img-home-default" src="'+baseUrlImg+i+'.jpg" '+
+                'width="'+(3*imgSlideWidth)+'px" id="imgSlide'+i  +'">'
+        } else {
+            htmlValue += '<img class="img-home" src="'+baseUrlImg+i+'.jpg" id="slide '+i+'" ' +
+
+            'width="'+imgSlideWidth+'px" id="imgSlide'+i  +'" >'
+        }
     }
+
+
     $('#slideShow').html(htmlValue);
+    document.body.style.setProperty('--img-width-logo-default', imgSlideWidth + 'px');//set
+    document.body.style.setProperty('--img-width-logo', imgSlideWidth*3 + 'px');//set
 
 });
-refresh.addEventListener("click", () => {
-    window.location.reload();
-});
 const menuClicked = () => {
-  $('.dropdown-content').css('display', 'flex');
+  $('#myDropdown').css('display', 'flex');
   $('#idMenu').css('display', 'none');
-  $('#idXSquare').css('display', 'flex');
+  $('#idXSquare').css('display', 'block');
  }
 const xSquareClicked = () => {
     $('#idXSquare').css('display', 'none');
     $('#idMenu').css('display', 'block');
-    $('.dropdown-content').css('display', 'none');
+    $('#myDropdown').css('display', 'none');
+}
+const goToModel = () => {
+    location.replace(location.pathname.replace('index.html', 'models.html'));
 }
