@@ -55,14 +55,12 @@
     text-align: left!important;
 }
 .title {
-    border-top: 2px solid var(--border-white);
-    border-bottom: 1px solid var(--border-white);
+    border: 2px solid var(--border-white);
      grid-area: title;
 }
 .description {
      grid-area: description;
-    border-top: 1px solid var(--border-white);
-    border-bottom: 1px solid var(--border-white);
+    border: 2px solid var(--border-white);
 }
 .description .paragraph {
     padding: 27px 24px;
