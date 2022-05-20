@@ -5,7 +5,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="css/models.css">
-    <script type="javascript" src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -28,8 +27,8 @@
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
     <div class="dropdown-content">
         <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
-        <a  class="text-font-normal normal-box-padding" href="#about"><div class="show-menu-item-animation">NEWS</div></a>
-        <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#about"><div class="show-menu-item-animation">NEWS</div></a>
+        <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
         <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">STUDIO</div></a>
         <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">REVIEW</div></a>
         <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">CONTACT</div></a>
@@ -41,11 +40,40 @@
         <h6>Found models: <h6 id="quantity">[quantity]</h6></h6>
     </div>
     <div class="grid-model-container">
-        <button class="categories-area btn-custom btn-icon-right"><p></p><p class="paragraph">CATEGORIES</p><img class="icon-small" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="gender-area btn-custom btn-icon-right"><p></p><p class="paragraph">GENDER</p><img class="icon-small" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="location-area btn-custom btn-icon-right"><p></p><p class="paragraph">MODEL LOCATION</p><img class="icon-small" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="measurements-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEASUREMENTS</p><img class="icon-small" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="categories-area btn-custom btn-icon-right"><p></p><p class="paragraph">CATEGORIES</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="gender-area btn-custom btn-icon-right"><p></p><p class="paragraph">GENDER</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="location-area btn-custom btn-icon-right"><p></p><p class="paragraph">MODEL LOCATION</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="measurements-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEASUREMENTS</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <div class="dropdown-filter categories-dropdown-area">
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Main</p> </button>
+            <button class="btn-custom btn-left"><p class="paragraph">Development</p> </button>
+            <button class="btn-custom btn-left"><p class="paragraph">New faces</p> </button>
+        </div>
+        <div class="dropdown-filter  gender-dropdown-area">
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Female</p> </button>
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Male</p> </button>
+        </div>
+        <div class="dropdown-filter location-dropdown-area">
+            <div class=" btn-left none-opacity btn-disable-hover"><input type="text" class="input-text" placeholder="Search"></div>
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Vietnam</p> </button>
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Singapore</p> </button>
+        </div>
+        <div class="dropdown-filter measurements-dropdown-area">
+            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Height [167] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Bust [70] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Waist [55] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Hips [80] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Shoe [37]</p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+        </div>
+        <div class="space-area"></div>
+        <div class="models-area models ">
+            <div class="model-item">
 
+            </div>
+        </div>
+        <div class="discovery-area">
+            <button onclick="generateModels()" class="btn-custom btn-icon-right"><p></p><p class="heading">DISCOVER MORE</p><img id="nextDouble" src="images/icon_light/next-double-light-icon.png"></button>
+        </div>
     </div>
    </div>
 <footer class="grid-container-footer">
@@ -84,6 +112,8 @@
 
     </div>
 </footer>
-<script src="script.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="js/models.js"></script>
 </body>
 </html>

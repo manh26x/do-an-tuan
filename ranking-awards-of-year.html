@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/ranking.css">
+  <link rel="stylesheet" href="css/models.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<nav id="navBar" class="navbar-custom normal-box-padding ">
+  <!-- Brand -->
+  <div class="navbar-custom-content normal-box-padding">
+    <img alt="logo" id="logoHeader" src="images/icon_light/logo-mark-light.png">
+    <!-- Links -->
+    <ul class="group-menu">
+      <li ><a href="#" class="text-font-normal " >SEARCH</a></li>
+      <li ><a href="#" style="margin-left: 80px" class="text-font-normal ">WISH LIST[0]</a></li>
+      <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
+        <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="toggle">
+  <a><img alt="" id="imgToggle" width="45px" height="45px" src="images/icon_light/mode-light-icon.png"></a></div>
+<div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
+  <div class="dropdown-content">
+    <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
+    <a  class="text-font-normal normal-box-padding"  href="#about"><div class="show-menu-item-animation">NEWS</div></a>
+    <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#ranking"><div class="show-menu-item-animation">RANKINGS</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">STUDIO</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">REVIEW</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">CONTACT</div></a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>RANKINGS</h1>
+  </div>
+  <div class="grid-model-gender-container">
+    <button class="men-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+    <button class="women-area btn-custom btn-icon-right"><p></p><p class="paragraph">WOMEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+    <div class="title">
+      <h1 id="titleAwardOfYear">MODEL OF THE YEAR AWARDS</h1>
+    </div>
+    <div class="description">
+      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt dolor dolor sollicitudin egestas ullamcorper egestas bibendum habitasse posuere. Eu, orci mattis nec elementum dui. Lacus adipiscing erat tortor turpis. In risus arcu condimentum cursus imperdiet arcu metus commodo, nunc. Mauris sagittis, amet et ac egestas mauris vel blandit. Nisi, egestas eget massa egestas ultrices donec in. Nunc sed consectetur nibh convallis vulputate lectus proin. Egestas etiam dictumst purus at id iaculis justo. Nam sem enim nunc pretium vehicula velit. Nulla aenean arcu donec iaculis etiam nunc risus aliquam in. Volutpat adipiscing elit tellus lorem risus. Lacus sit nulla consectetur sed in. Commodo gravida tempus, ut facilisis pellentesque. Est, laoreet nulla lectus in mauris venenatis.z ectus proin. Egestas etiam dictumst purus at id iaculis justo. Nam sem enim nunc pretium vehicula velit. Nulla aenean arcu donec iaculis etiam nunc risus aliquam in. Volutpat adipiscing elit tellus lorem risus. Lacus sit nulla consectetur sed in. Commodo gravida tempus, ut facilisis pellentesque. Est, laoreet nulla lectus in mauris venenatis.z</p>
+    </div>
+  </div>
+  <div class="year-detail-box">
+    <div class="title women">
+      <h1>MODEL OF THE YEAR</h1>
+      <div class="year-detail-list title">
+        <div class="sensi title-item"><h1>SENSI MIA</h1></div>
+        <div class="hana title-item"><h1>HANA CRIS</h1></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-detail-box">
+    <div class="title women">
+      <h1>RUNNER UP</h1>
+      <div class="year-detail-list title">
+        <div class="runner1 title-item"><h1>SELENA ARHI</h1></div>
+        <div class="runner2 title-item"><h1>J.MOLENA</h1></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-detail-box">
+    <div class="title women">
+      <h1>ALL NOMINEES</h1>
+      <div class="model-name-list title">
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+        <h2>Model name</h2>
+
+      </div>
+    </div>
+  </div>
+<footer class="grid-container-footer">
+  <div class="email-area">
+    <p class="paragraph">NEWSLETTER</p>
+    <p class="paragraph" style="margin-top: 40px">Subscribe to our newsletter</p>
+    <form class="email-form">
+      <input class="input-text" placeholder="Email">
+      <button class="btn-custom"><p>SUBSCRIBE</p></button>
+    </form>
+  </div>
+  <div class="main-area">
+    <p class="paragraph company">THE COMPANY</p>
+    <p class="paragraph client">CLIENT SERVICES</p>
+    <p class="paragraph contact">CONTACT US</p>
+    <p class="paragraph connect">CONNECT</p>
+    <p class="paragraph imodel">Why Imodels</p>
+    <p class="paragraph faq">FAQ</p>
+    <p class="paragraph phone">[+84] 827 700 695</p>
+    <p class="paragraph facebook">Facebook</p>
+    <p class="paragraph we">Who we are</p>
+    <p class="paragraph contactus">contacts@imodels.com</p>
+    <p class="paragraph insta">Instagram</p>
+    <p class="paragraph linkedin">LinkedIn</p>
+  </div>
+  <div class="footer-area">
+    <div class="logo-footer">
+      <img id="logoFooter" alt="" src="images/logo-black.png">
+      <img id="sloganFooter" alt="" src="images/icon_light/logo-type-light/home_logo.png">
+    </div>
+    <p class="paragraph">2022 IMODELS. All rights reserved</p>
+    <div class="term-area">
+      <p class="paragraph" style="cursor: pointer">Terms & Conditions</p>
+      <p class="paragraph">Privacy Policy</p>
+    </div>
+
+  </div>
+</footer>
+<script src="script.js"></script>
+<script src="js/ranking.js"></script>
+</body>
+</html>

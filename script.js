@@ -23,6 +23,8 @@ toggle.addEventListener("click", () => {
         $('#logoFooter').attr('src', "images/icon_dark/logo-mark-dark.png");
         $('#sloganFooter').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
         $('#imgToggle').attr("src","images/icon_dark/mode-dark-icon.png");
+        $('.icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+        $('#nextDouble').attr("src","images/icon_dark/double-next-dark-icon.png");
     } else {
         window.localStorage.setItem("theme", "dark");
         $('#logoHeader').attr("src","images/icon_light/logo-mark-light.png");
@@ -31,6 +33,9 @@ toggle.addEventListener("click", () => {
         $('#logoFooter').attr('src', "images/icon_light/logo-mark-light.png");
         $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
         $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
+        $('.icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        $('#nextDouble').attr("src","mages/icon_light/next-double-light-icon.png");
+
     }
 });
 $( document ).ready(function() {
@@ -40,7 +45,10 @@ $( document ).ready(function() {
     $('.full-width-img').css('width', defaultWith);
     $('.model-list-show').css('width', defaultWith);
     $('#idMoveHome').css('width', defaultWith);
-    $('.navbar-custom-content').css('width', defaultWith)
+    $('.navbar-custom-content').css('width', defaultWith);
+    $('.grid-model-container').css('width', defaultWith);
+    $('.grid-model-gender-container').css('width', defaultWith);
+    $('.year-detail-box').css('width', defaultWith)
     defaultWith -=4;
     let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";
@@ -55,11 +63,25 @@ $( document ).ready(function() {
             'width="'+imgSlideWidth+'px" id="imgSlide'+i  +'" >'
         }
     }
-
+    $('#logoHeader').click(() => {
+        let pattern = /.*.html/;
+        location.replace(location.pathname.replace(pattern, 'index.html'));
+    });
 
     $('#slideShow').html(htmlValue);
     document.body.style.setProperty('--img-width-logo-default', imgSlideWidth + 'px');//set
     document.body.style.setProperty('--img-width-logo', imgSlideWidth*3 + 'px');//set
+    let lastScrollTop = 0;
+
+    $(window).scroll(function(event){
+        let st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            $('#navBar').css('animation', 'hiddenNavBar 500ms ease-in 0s forwards');
+        } else {
+            $('#navBar').css('animation', 'showNavBar 500ms ease-in 0s forwards');
+        }
+        lastScrollTop = st;
+    });
 
 });
 const menuClicked = () => {
@@ -73,5 +95,11 @@ const xSquareClicked = () => {
     $('#myDropdown').css('display', 'none');
 }
 const goToModel = () => {
-    location.replace(location.pathname.replace('index.html', 'models.html'));
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'models.html'));
+}
+const goToRank = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'ranking.html'));
+    console.log(location)
 }

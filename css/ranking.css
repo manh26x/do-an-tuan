@@ -1,0 +1,228 @@
+.page-header {
+    margin-top: 48px;
+    display: flex;
+    align-items: flex-start;
+}
+.page-header h1 {
+    font-weight: 400;
+    font-size: 200px;
+    line-height: 230px;
+    /* identical to box height */
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+.ranking-title, .year-detail-box {
+    border: 2px solid var(--border-white);
+
+}
+.year-detail-box {
+    margin-top: 96px;
+}
+.year-detail-box .title > h1 {
+    margin: 0 ;
+    text-align: center;
+    padding: 22px 0;
+}
+.year-detail-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.year-detail-list .sensi{
+    background-image: url("../images/rankings/model-year-awards-2021-women/model-of-the-year-1.jpg");
+}
+.year-detail-list .hana {
+    background-image: url("../images/rankings/model-year-awards-2021-women/model-of-the-year-2.jpg");
+}
+.year-detail-list .runner1 {
+    background-image: url("../images/rankings/model-year-awards-2021-women/runner-up-1.jpg");
+}
+.year-detail-list .runner2 {
+    background-image: url("../images/rankings/model-year-awards-2021-women/runner-up-2.jpg");
+}
+.year-detail-list  .title-item {
+    height: 95vh;
+    background-size: cover;
+
+}
+.title {
+    border-top: 2px solid var(--border-white);
+    border-bottom: 1px solid var(--border-white);
+     grid-area: title;
+}
+.description {
+     grid-area: description;
+    border-top: 1px solid var(--border-white);
+    border-bottom: 1px solid var(--border-white);
+}
+.description .paragraph {
+    padding: 27px 24px;
+}
+.title > h1 {
+    margin-top: 120px;
+    margin-left: 0;
+    padding: 0 16px;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-white);
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 115px;
+
+}
+.ranking-title .title .title-list {
+    display: grid;
+    grid-template-areas: 'model trending money '
+    'modelTen social runway';
+
+}
+.ranking-title .title .title-item {
+    width: 630px;
+    height: 629px;
+}
+.title .title-item {
+    border: 1px solid var(--border-white);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+ .title .title-item h1 {
+    background-color: rgba(196, 196, 196, 0.6);
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+
+}
+.ranking-title .title .model-year {
+    grid-area: model;
+    background-image: url("../images/rankings/model-awards.jpg");
+}
+
+.ranking-title .title .trending {
+    grid-area: trending;
+}
+.ranking-title .men .trending {
+    background-image: url("../images/rankings/trending-men.jpg");
+}
+.ranking-title .women .trending {
+    background-image: url("../images/rankings/trending-women.jpg");
+}
+.ranking-title .title .money-list {
+    grid-area: money;
+}
+.ranking-title .men .money-list {
+    background-image: url("../images/rankings/the-money-list-men.jpg");
+}
+.ranking-title .women .money-list {
+    background-image: url("../images/rankings/the-money-list-women.jpg");
+}
+.ranking-title .title .models-10 {
+    grid-area: modelTen;
+}
+.ranking-title .men .models-10 {
+    background-image: url("../images/rankings/top10-models_men.jpg");
+}
+.ranking-title .women .models-10 {
+    background-image: url("../images/rankings/top10-models-women.jpg");
+}
+.ranking-title .title .social {
+    grid-area: social;
+}
+.ranking-title .men .social {
+    background-image: url("../images/rankings/social-men.jpg");
+}
+.ranking-title .women .social {
+    background-image: url("../images/rankings/social-women.jpg");
+}
+.ranking-title .title .runway {
+    grid-area: runway;
+}
+.ranking-title .men .runway {
+    background-image: url("../images/rankings/runway-men.jpg");
+}
+.ranking-title .women .runway {
+    background-image: url("../images/rankings/runway-women.jpg");
+}
+.grid-model-gender-container {
+    display: grid;
+    grid-template-areas:
+    'men women'
+    'title title'
+    'description description'
+    'years years'
+;
+    grid-auto-columns: 1fr;
+    border: 2px solid var(--border-white);
+}
+.men-area {
+    grid-area: men;
+}
+.women-area {
+    grid-area: women;
+}
+.years-area {
+    grid-area: years;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.years-area .year-item {
+    height: 472px;
+    width: 629px;
+    border: 1px solid var(--border-white);
+    background-size: cover;
+    cursor: pointer;
+}
+.years-area .year-item .filter-bg {
+    position: absolute;
+    height: 472px;
+    width: 629px;
+    background-color: rgba(215, 215, 215, 0.6);
+    filter: blur(5px);
+}
+.years-area .year-item .center-text {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 472px;
+    width: 629px;
+}
+.years-area .year-item .center-text h1 {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 74px;
+    /* identical to box height */
+    color: #000000;
+}
+.years-area .year-2021 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2021-women.jpg");
+}
+.years-area .year-2020 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2020-women.jpg");
+}
+.years-area .year-2019 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2019-women.jpg");
+}
+.years-area .year-2018 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2018-women.jpg");
+}
+.years-area .year-2017 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2017-women.jpg");
+}
+.years-area .year-2016 {
+    background-image: url("../images/rankings/model-of-the-year-awards-women/model-awards-2016-women.jpg");
+}
+
+.model-name-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    color: var(--text-dark);
+}
+.model-name-list h2 {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 41px;
+    padding: 28px 24px;
+
+}
