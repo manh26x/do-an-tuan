@@ -46,8 +46,8 @@ $( document ).ready(function() {
     $('.model-list-show').css('width', defaultWith);
     $('#idMoveHome').css('width', defaultWith);
     $('.navbar-custom-content').css('width', defaultWith);
-    $('.grid-model-container').css('width', defaultWith);
-    $('.grid-model-gender-container').css('width', defaultWith);
+    $('.grid-model-container').css('width', defaultWith-2);
+    $('.grid-model-gender-container').css('width', defaultWith-2);
     $('.year-detail-box').css('width', defaultWith);
     $('.list-ranking-choose').css('width', defaultWith/2-2);
     $('.list-ranking-choose-right').css('width', defaultWith/2-2);
