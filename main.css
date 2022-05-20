@@ -496,6 +496,7 @@ li::marker {
     background: linear-gradient(0.25turn, #c4c4c4, var(--bg-grey-dark), var(--bg-grey-light), var(--bg-grey-dark), #c4c4c4);
 
 }
+
 .email-form .btn-custom:hover > p {
     animation: animationButtonText 0.5s ease-in 0s ;
 }

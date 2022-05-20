@@ -41,8 +41,27 @@
     <h1>RANKINGS</h1>
   </div>
   <div class="grid-model-gender-container">
-    <button class="men-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-    <button class="women-area btn-custom btn-icon-right"><p></p><p class="paragraph">WOMEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+    <button class="men-area btn-custom btn-icon-right" onclick="showListRankingMen()"><p></p><p class="paragraph">MEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+    <div class="list-ranking-choose">
+      <button class="btn-custom" style="visibility: hidden" onclick="gotoRankingOfAwards()"><p class="paragraph">a</p> </button>
+      <button class="btn-custom"><p class="paragraph">Model Of The Year Awards</p> </button>
+      <button class="btn-custom"><p class="paragraph">Trending</p> </button>
+      <button class="btn-custom "><p class="paragraph">The money list</p> </button>
+      <button class="btn-custom"><p class="paragraph">Top 10 models</p> </button>
+      <button class="btn-custom"><p class="paragraph">Social</p> </button>
+      <button class="btn-custom "><p class="paragraph">Runway</p> </button>
+    </div>
+
+    <button class="women-area btn-custom btn-icon-right" onclick="showListRankingWomen()"><p></p><p class="paragraph">WOMEN</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+    <div class="list-ranking-choose-right">
+      <button class="btn-custom" style="visibility: hidden"><p class="paragraph">a</p> </button>
+      <button class="btn-custom"><p class="paragraph" onclick="gotoRankingOfAwards()">Model Of The Year Awards</p> </button>
+      <button class="btn-custom"><p class="paragraph">Trending</p> </button>
+      <button class="btn-custom "><p class="paragraph">The money list</p> </button>
+      <button class="btn-custom"><p class="paragraph">Top 10 models</p> </button>
+      <button class="btn-custom"><p class="paragraph">Social</p> </button>
+      <button class="btn-custom "><p class="paragraph">Runway</p> </button>
+    </div>
     <div class="title">
       <h1 id="titleAwardOfYear">MODEL OF THE YEAR AWARDS</h1>
     </div>

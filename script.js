@@ -48,7 +48,12 @@ $( document ).ready(function() {
     $('.navbar-custom-content').css('width', defaultWith);
     $('.grid-model-container').css('width', defaultWith);
     $('.grid-model-gender-container').css('width', defaultWith);
-    $('.year-detail-box').css('width', defaultWith)
+    $('.year-detail-box').css('width', defaultWith);
+    $('.list-ranking-choose').css('width', defaultWith/2-2);
+    $('.list-ranking-choose-right').css('width', defaultWith/2-2);
+    $('.list-ranking-choose-right').css('margin-left', defaultWith/2-2);
+    $('.year-item').css('width', defaultWith/3)
+    $('.filter-bg').css('width', defaultWith/3)
     defaultWith -=4;
     let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";

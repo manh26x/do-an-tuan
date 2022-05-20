@@ -45,6 +45,15 @@
     background-size: cover;
 
 }
+.list-ranking-choose  ,.list-ranking-choose-right{
+    position:  absolute;
+    display: none;
+    flex-direction: column;
+    z-index: 4;
+}
+.list-ranking-choose .btn-custom,.list-ranking-choose-right .btn-custom {
+    text-align: left!important;
+}
 .title {
     border-top: 2px solid var(--border-white);
     border-bottom: 1px solid var(--border-white);
@@ -153,9 +162,11 @@
 ;
     grid-auto-columns: 1fr;
     border: 2px solid var(--border-white);
+    border-top: none;
 }
 .men-area {
     grid-area: men;
+    border:  2px solid var(--border-white)
 }
 .women-area {
     grid-area: women;
