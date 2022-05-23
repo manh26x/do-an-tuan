@@ -18,7 +18,8 @@ body {
     --bg-grey-dark: #D2D2D2BF;
     --img-width-logo: 100px;
     --img-width-logo-default: 100px;
-
+    --fc-highlight-color : rgba(152, 144, 144, 0.6);
+    --fc-event-bg-color: #000;
     /*
  ...
  */
@@ -33,7 +34,6 @@ body {
     --bg-blue-dark: rgba(0, 0, 0, 1);
     --bg-indigo: #7577e1;
     --border-white: #000;
-
 }
 * {
     margin: 0;
@@ -188,7 +188,7 @@ img {
     display: none;
     position: fixed;
     background-color: var(--bg-grey-light);
-    z-index: 1;
+    z-index: 10;
     width: 100vw;
     height: 100vh;
     top: 110px;

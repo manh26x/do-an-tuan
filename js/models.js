@@ -1,4 +1,3 @@
-
 $('.categories-area').click(() => {
     let parent = $('.categories-dropdown-area');
     parent.css({'visibility': 'unset', 'height':'auto'});
@@ -39,25 +38,34 @@ $('.measurements-area').click(() => {
 $('.measurements-dropdown-area').mouseleave(() =>  $('.measurements-dropdown-area').css({'visibility': 'hidden', 'height':'0'}));
 
 $(document).ready(() => {
+
+    if(localStorage.getItem('models')) {
+        models = JSON.parse(localStorage.getItem('models'));
+    } else  {
+        localStorage.setItem('models', JSON.stringify(models));
+    }
+    $('#quantityModel').text('['+models.length+']')
     generateModels();
 });
+const addWishList = (index) =>{
+    models[index].wished = true;
+    localStorage.setItem('models', JSON.stringify(models));
+    generateModels();
+    getWishList();
+}
+
 let modelSize = 8;
 const generateModels = () => {
     let modelsChildren = '';
     modelSize += 4;
-    theme = window.localStorage.getItem("theme");
-    let iconUrl = ''
-    if(theme === 'dark') {
-
-    }
     models.slice(0, modelSize).forEach((model,i) => {
         modelsChildren += '<div class="model-item" id="model' + i+'"></div>';
         model.id = i;
         setTimeout(() => {
             $('#model'+i).css('background-image', 'url(./images/models-page-full/' + model.image + '.jpg)');
             let htmlInfo =
-                '                <div class="blur-cover" style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 29rem; height: 640px; filter: blur(2px); transform: translate(-25px,-25px)"></div>\n' +
-                ' <div class="model-item-title"><h6>'+model.name+'</h6><img src="images/icon_dark/heart-dark-icon.png"> </div>\n' +
+                '           <div class="blur-cover" style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 29rem; height: 640px; filter: blur(2px); transform: translate(-25px,-25px)"></div>\n' +
+                ' <div class="model-item-content">     <div class="model-item-title"><h6>'+model.name+'</h6><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+')"> </div>\n' +
                 '                <p style="visibility: hidden">Height: '+model.height+'</p>\n' +
                 '                <p  style="visibility: hidden">Bust: '+model.bust+'</p>\n' +
                 '                <p  style="visibility: hidden">Waist: '+model.waist+'</p>\n' +
@@ -65,7 +73,7 @@ const generateModels = () => {
                 '                <p  style="visibility: hidden">Shoe: '+model.shoe+'</p>\n' +
                 '                <p  style="visibility: hidden">Hair: '+model.hair+'</p>\n' +
                 '                <p  style="visibility: hidden">Eyes: '+model.eyes+'</p> </div>'+
-                '                <div class="country" style="z-index: 3;"><h6>'+model.location+'</h6>';
+                '                <div class="country" style="z-index: 3;"><h6>'+model.location+'</h6></div>';
             $('#model'+i).html(htmlInfo);
             $('#model'+i).hover(
                 () => {
@@ -78,13 +86,26 @@ const generateModels = () => {
                     $('#model'+i + ' .blur-cover').css('visibility', 'hidden');
                     $('#model'+i + ' p').css('visibility', 'hidden');
                 }
-            )
-        }, 100)
+            );
+
+            setTimeout(() => {
+                $('.model-item .model-item-content').css('width', defaultWith / 4 - 50);
+                if(model.wished === true) {
+                    $('#model' + i + ' .heart-icon').attr('src', 'images/fill-heart-dark-icon.png');
+                } else {
+                    $('#model' + i + ' .heart-icon').hover(
+                        () => $('#model' + i + ' .heart-icon').attr('src', 'images/fill-heart-dark-icon.png'),
+                        () => $('#model' + i + ' .heart-icon').attr('src', 'images/icon_dark/heart-dark-icon.png')
+                    );
+
+                }
+            }, 100);
+        }, 100);
     });
-    $('.models').html(modelsChildren);
+    $('#models').html(modelsChildren);
 }
 
-const models =[
+let models =[
     {
         "name": "Insta Eiji",
         "categories": "Main",

@@ -36,10 +36,11 @@
     grid-area: space;
     height: 100px!important;
 }
-.models-area {
+.wishlist-area, .models-area {
     grid-area: models;
+    display: none;
 }
-.models {
+#models, #wishlist {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -47,12 +48,15 @@
     background-image: url("../images/models-page-full/img/Anna1.jpg") ;
     border: 2px solid var(--border-white);
     height: 640px;
-    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     transition: background-image 1s;
     padding: 20px;
     color: var(--bg-blue-dark);
+    z-index: 1;
+}
+.model-item .model-item-content {
+    position: absolute;
 }
 .model-item:hover {
     background-size: cover;
@@ -65,6 +69,7 @@
 .model-item-title img {
     height: 40px;
     transition: all 1s;
+    cursor: pointer;
 }
 .model-item-title p {
     transition: all 1s;
@@ -74,7 +79,7 @@
     display: flex;
     justify-content: left;
     align-items: flex-end;
-    height: 208px;
+    height: 540px;
 }
 .model-item h6 {
     font-family: 'Helvetica', sans-serif;

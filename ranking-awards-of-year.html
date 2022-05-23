@@ -16,7 +16,7 @@
     <!-- Links -->
     <ul class="group-menu">
       <li ><a href="#" class="text-font-normal " >SEARCH</a></li>
-      <li ><a href="#" style="margin-left: 80px" class="text-font-normal ">WISH LIST[0]</a></li>
+      <li ><a href="#" style="margin-left: 80px" class="text-font-normal " id="wishlistLink">WISH LIST[0]</a></li>
       <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
         <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
       </li>
@@ -28,14 +28,14 @@
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
   <div class="dropdown-content">
     <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
-    <a  class="text-font-normal normal-box-padding"  href="#about"><div class="show-menu-item-animation">NEWS</div></a>
-    <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#ranking"><div class="show-menu-item-animation">RANKINGS</div></a>
-    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">STUDIO</div></a>
-    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">REVIEW</div></a>
-    <a  class="text-font-normal normal-box-padding" href="#contact"><div class="show-menu-item-animation">CONTACT</div></a>
+    <a  class="text-font-normal normal-box-padding"  href="#"><div class="show-menu-item-animation">NEWS</div></a>
+    <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoBecomeModel()"><div class="show-menu-item-animation">BECOME A MODEL</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoReview()"><div class="show-menu-item-animation">REVIEW</div></a>
+    <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoContact()"><div class="show-menu-item-animation">CONTACT</div></a>
   </div>
 </div>
-
 <div class="container">
   <div class="page-header">
     <h1>RANKINGS</h1>

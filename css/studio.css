@@ -1,0 +1,83 @@
+.studio-review {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.studio-review .left {
+    border: 2px solid var(--border-white);
+    border-right: none;
+    padding: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 41px;
+}
+.studio-review .right {
+    border: 2px solid var(--border-white);
+    border-top: none;
+    border-bottom: none;
+}
+.studio-review .right img {
+    object-fit: cover;
+    height: 100%;
+}
+#calendar {
+    color: var(--text-dark);
+}
+.fc-theme-standard td, .fc-theme-standard th {
+    border: 1px solid var(--border-white)!important;
+}
+
+.fc .fc-scrollgrid-section td[class="fc-timegrid-divider fc-cell-shaded"] {
+    display: none;
+}
+tr[class="fc-scrollgrid-section fc-scrollgrid-section-body " ]{
+    display: none;
+}
+.fc-day-today {
+    background: var(--bg-grey-light) !important;
+    border: none !important;
+}
+.fc-icon-chevron-left:before {
+    content: none!important;
+}
+.fc-icon-chevron-right:before {
+    content: none!important;
+}
+.fc-toolbar-chunk button[title="Previous week"] {
+    background-image: url("../images/icon_dark/previous-dark-icon.png");
+    background-size: contain;
+    border: none;
+    margin: 37px 40px;
+    width: 45px;
+    height: 45px;
+}
+.fc-toolbar-chunk button[title="Next week"] {
+    background-image: url("../images/icon_dark/next-dark-icon.png");
+    background-size: contain;
+    border: none;
+    margin: 37px 40px;
+    width: 45px;
+    height: 45px;
+}
+.fc .fc-button-primary {
+    background-color: var(--bg-grey-light)!important;
+}
+#calendar, .fc .fc-toolbar.fc-header-toolbar  {
+    border: 2px solid var(--border-white);
+}
+.fc .fc-toolbar.fc-header-toolbar  {
+    border-top: none ;
+}
+#calendar{
+    height: 995px;
+}
+.fc-day-sun, .fc-day-sat  { background-color:var(--fc-highlight-color)!important; }
+.fc-col-header , .fc .fc-timegrid-slot {
+    height: 3.5em!important;
+}
+.fc-col-header .fc-col-header-cell {
+    padding-top: 15px;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 4.5em!important;
+}

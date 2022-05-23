@@ -1,0 +1,26 @@
+.wish-list-empty {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin: 150px 0;
+}
+.wish-list-empty h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 132px;
+}
+.wish-list-empty h6 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+}
+.model-item-title img {
+    width: 38px;
+    height: 38px;
+}
