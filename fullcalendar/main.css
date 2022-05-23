@@ -557,8 +557,7 @@ a.fc-event:hover {
 }
 .fc-event-selected:after, .fc-event:focus:after {
     content: "";
-    background: rgba(0, 0, 0, 0.25);
-    background: var(--fc-event-selected-overlay-color, rgba(0, 0, 0, 0.25));
+    /*background: rgba(0, 0, 0, 0.25);*/
     position: absolute;
     z-index: 1;
 

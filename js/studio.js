@@ -51,7 +51,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return dd + '/' + mm + '/' + yyyy;
         },
         select: function(info) {
-            console.log("selected " + info.startStr + " to " + info.endStr);
+            let date_future = info.end;
+            let date_now = info.start;
+
+            let curDate = new Date(date_now.getTime());
+            let money = 0;
+            while(curDate < date_future) {
+                const dayOfWeek = curDate.getDay();
+                if(curDate.getHours() <=21 && curDate.getHours() >= 9) {
+                    if(dayOfWeek !== 0 && dayOfWeek !== 6) {
+                        money += 200
+                    } else money += 300;
+                }
+                curDate.setHours(curDate.getHours() + 1);
+            }
+            $('#totalPrice').text('[$'+money+']')
         }
     });
     calendar.render();

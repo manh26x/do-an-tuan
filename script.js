@@ -67,6 +67,9 @@ $( document ).ready(function() {
     $('.ranking-title .title-item').css('width', defaultWith/3-1);
     $('.studio-review').css('width', defaultWith);
     $('#calendar').css('width', defaultWith);
+    $('#calculatePrice').css('width', defaultWith);
+    $('.contact-detail-form, .model-review').css('width', defaultWith);
+
     defaultWith -=4;
     let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";

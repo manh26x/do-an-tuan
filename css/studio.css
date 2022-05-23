@@ -81,3 +81,130 @@ tr[class="fc-scrollgrid-section fc-scrollgrid-section-body " ]{
 .fc .fc-toolbar.fc-header-toolbar {
     margin-bottom: 4.5em!important;
 }
+#calculatePrice {
+    padding-top: 120px;
+    border: 2px solid var(--border-white);
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    border-top: none ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+}
+#calculatePrice > div {
+    height: 100px;
+    border: 1px solid var(--border-white);
+    border-top: 2px solid var(--border-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*#calculatePrice .fc-event-selected {*/
+/*    background-color: var(--fc-event-bg-color);*/
+/*}*/
+#calculatePrice .weekend-price-box {
+    background-color: var(--fc-highlight-color);
+}
+
+.contact-detail-title {
+    border: 2px solid var(--border-white);
+    margin-top: 96px;
+    padding: 40px;
+
+}
+.contact-detail-title h2 {
+    text-align: center;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 115px;
+}
+.contact-detail-item .input-text, .contact-detail-item .paragraph{
+    width: 100%;
+    border-top: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 74px;
+}
+
+.radio-group .paragraph {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 41px;
+
+    border: none;
+}
+
+.radio-group {
+    display: block;
+    position: relative;
+    margin: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 700px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--bg-grey-light);
+    border-radius: 50%;
+    border: 2px solid var(--border-white);
+}
+
+/* On mouse-over, add a grey background color */
+.radio-group:hover input ~ .checkmark {
+    background-color: var(--bg-grey-light);
+}
+.radio-box {
+    border: 2px solid var(--border-white);
+    transform: translateY(-10px);
+}
+/* When the radio button is checked, add a blue background */
+.radio-group input:checked ~ .checkmark {
+    background-color: var(--bg-grey-light);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-group input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-group .checkmark:after {
+    top: 3px;
+    left: 2px;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background: var(--border-white);
+}
+.contact-detail-item .btn-custom {
+    width: 100%;
+    border-top: none ;
+    transform: translateY(-10px);
+}

@@ -2,9 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Wish List</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/models.css">
+    <link rel="stylesheet" href="css/studio.css">
+    <link rel="stylesheet" href="css/become-model.css">
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+<nav id="navBar" class="navbar-custom normal-box-padding ">
+    <!-- Brand -->
+    <div class="navbar-custom-content normal-box-padding">
+        <img alt="logo" id="logoHeader" src="images/icon_light/logo-mark-light.png">
+        <!-- Links -->
+        <ul class="group-menu">
+            <li ><a href="#" class="text-font-normal " >SEARCH</a></li>
+            <li ><a href="#" style="margin-left: 80px" id="wishlistLink" class="text-font-normal ">WISH LIST[0]</a></li>
+            <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
+                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="toggle">
+    <a><img alt="" id="imgToggle" width="45px" height="45px" src="images/icon_light/mode-light-icon.png"></a></div>
+<div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
+    <div class="dropdown-content">
+        <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#"><div class="show-menu-item-animation">NEWS</div></a>
+        <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoBecomeModel()"><div class="show-menu-item-animation">BECOME A MODEL</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoReview()"><div class="show-menu-item-animation">REVIEW</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoContact()"><div class="show-menu-item-animation">CONTACT</div></a>
+    </div>
+</div>
+<div class="container ">
+    <div class="page-header">
+        <h1>BECOME A MODEL</h1>
+    </div>
+    <div class="model-review">
+        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem a morbi nam posuere sociis non. Molestie sed elementum pellentesque aliquet nam consequat massa posuere. Vel purus massa sed lectus cum suspendisse risus nullam. Nibh sapien tincidunt orci gravida fermentum aliquet. Dui egestas vestibulum adipiscing leo, lobortis ullamcorper auctor cursus massa. Nunc tempus, nam tellus dictum volutpat risus magna. Varius turpis massa felis ullamcorper. Mus aliquet iaculis et id nascetur enim ut. Est pretium urna porttitor risus duis mauris mus vitae. Quam morbi tellus dignissim tortor, et sagittis. Sociis mollis ipsum gravida varius adipiscing lorem. Tortor quam aliquam turpis magnis. Pellentesque nunc posuere volutpat proin tristique. Amet, leo vitae arcu, leo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem a morbi nam posuere sociis non. Molestie sed elementum pellentesque aliquet nam consequat massa posuere. Vel purus massa sed lectus cum suspendisse risus nullam.</p>
+    </div>
+    <div class="contact-detail-form">
+        <div class="contact-detail-title"></div>
+        <div class="grid-model-form">
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="First name"></div>
+            <div class="contact-detail-item grid-rows-11 vertical-flex-text"><p class="vertical-text">FIRST STEP</p> </div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Last name"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Date of birth"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Mail"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Select gender"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Country"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="City"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Link to social network"></div>
+            <div class="contact-detail-item"  ><input type="text" style="border-bottom: none!important;" class="input-text" placeholder="Phone number"></div>
+            <div class="contact-detail-item radio-box"  style="border-bottom: none!important;">
+                <label class="radio-group ">
+                    <p class="paragraph">I agree to the processing of personal data</p>
+                    <input type="radio"  name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="contact-detail-item" style=" grid-column-start: 1;grid-column-end: 3"><input style="border-top: 2px solid!important;padding: 0" type="text" class="input-text"></div>
 
+        </div>
+
+        <div class="grid-model-form">
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Height"></div>
+            <div class="contact-detail-item grid-rows-11 vertical-flex-text"><p class="vertical-text">SECOND STEP</p> </div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Bust"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Waist"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Hips"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Shoe"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Hair"></div>
+            <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Eyes"></div>
+            <div class="contact-detail-item" style="grid-row-start: 8; grid-row-end: 10"><textarea style="border-bottom: none!important;" class="input-text"
+                                                        placeholder="Why do you want to become an IMODELS agency?" rows="3"></textarea></div>
+            <div class="contact-detail-item radio-box"  style="border-bottom: none!important;">
+                <label class="radio-group ">
+                    <p class="paragraph">I agree to the processing of personal data</p>
+                    <input type="radio"  name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="contact-detail-item" style=" grid-column-start: 1;grid-column-end: 3"><input style="border-top: 2px solid!important;padding: 0" type="text" class="input-text"></div>
+
+        </div>
+
+        <div class="contact-detail-item"><button class="btn-custom"><p class="paragraph">SEND MESSAGE</p></button> </div>
+    </div>
+</div>
+<footer class="grid-container-footer">
+    <div class="email-area">
+        <p class="paragraph">NEWSLETTER</p>
+        <p class="paragraph" style="margin-top: 40px">Subscribe to our newsletter</p>
+        <form class="email-form">
+            <input class="input-text" placeholder="Email">
+            <button class="btn-custom"><p>SUBSCRIBE</p></button>
+        </form>
+    </div>
+    <div class="main-area">
+        <p class="paragraph company">THE COMPANY</p>
+        <p class="paragraph client">CLIENT SERVICES</p>
+        <p class="paragraph contact">CONTACT US</p>
+        <p class="paragraph connect">CONNECT</p>
+        <p class="paragraph imodel">Why Imodels</p>
+        <p class="paragraph faq">FAQ</p>
+        <p class="paragraph phone">[+84] 827 700 695</p>
+        <p class="paragraph facebook">Facebook</p>
+        <p class="paragraph we">Who we are</p>
+        <p class="paragraph contactus">contacts@imodels.com</p>
+        <p class="paragraph insta">Instagram</p>
+        <p class="paragraph linkedin">LinkedIn</p>
+    </div>
+    <div class="footer-area">
+        <div class="logo-footer">
+            <img id="logoFooter" alt="" src="images/logo-black.png">
+            <img id="sloganFooter" alt="" src="images/icon_light/logo-type-light/home_logo.png">
+        </div>
+        <p class="paragraph">2022 IMODELS. All rights reserved</p>
+        <div class="term-area">
+            <p class="paragraph" style="cursor: pointer">Terms & Conditions</p>
+            <p class="paragraph">Privacy Policy</p>
+        </div>
+
+    </div>
+</footer>
+
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
