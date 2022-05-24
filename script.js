@@ -15,8 +15,24 @@ let hashURL = location.pathname;
 toggle.addEventListener("click", toggleTheme);
 function toggleTheme(isChangeTheme) {
     theme = window.localStorage.getItem("theme");
-    document.body.classList.toggle("dark");
+
     if (theme === "dark") {
+
+        $('#logoHeader').attr("src","images/icon_light/logo-mark-light.png");
+        $('#idXSquare>img').attr("src","images/icon_light/x-square-light-icon.png");
+        $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
+        $('#logoFooter').attr('src', "images/icon_light/logo-mark-light.png");
+        $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
+        $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
+        $('.icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        $('#nextDouble, .next-double-icon').attr("src","images/icon_light/next-double-light-icon.png");
+        if(isChangeTheme !== false) {
+            window.localStorage.setItem("theme", "light");
+            document.body.classList.toggle("dark");
+            toggleTheme(false);
+        }
+
+    } else {
         $('#idLogoHome').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
         $('#logoHeader').attr("src","images/icon_dark/logo-mark-dark.png");
         $('#idXSquare>img').attr("src","images/icon_dark/x-square-dark-icon.png");
@@ -26,23 +42,9 @@ function toggleTheme(isChangeTheme) {
         $('.icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
         $('#nextDouble, .next-double-icon').attr("src","images/icon_dark/double-next-dark-icon.png");
         if(isChangeTheme !== false) {
-            window.localStorage.setItem("theme", "light");
-            $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
-        }
-
-    } else {
-
-        $('#logoHeader').attr("src","images/icon_light/logo-mark-light.png");
-        $('#idXSquare>img').attr("src","images/icon_light/x-square-light-icon.png");
-        $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
-        $('#logoFooter').attr('src', "images/icon_light/logo-mark-light.png");
-        $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
-        $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
-        $('.icon-plus').attr("src","images/icon_light/plus-light-icon.png");
-        $('#nextDouble, .next-double-icon').attr("src","mages/icon_light/next-double-light-icon.png");
-        if(isChangeTheme !== false) {
             window.localStorage.setItem("theme", "dark");
-            $('#idLogoHome').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
+            document.body.classList.toggle("dark");
+            toggleTheme(false);
         }
     }
 }

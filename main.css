@@ -8,7 +8,7 @@ body {
     --text-white: #ffffff;
     --text-dark: #000000;
     transition: background-color 0.5s;
-
+    --color-primary: #000;
     /* background colors */
     --bg-grey-light: #fff;
     --bg-white: #000;
@@ -31,6 +31,7 @@ body {
     --bg-grey-dark: #232323BF;
     --bg-grey-light: #000;
     --bg-white: #fff;
+    --color-primary: #fff;
     --bg-blue-dark: rgba(0, 0, 0, 1);
     --bg-indigo: #7577e1;
     --border-white: #000;
@@ -58,7 +59,7 @@ body{
     /* text colors */
     --text-white: #ffffff;
     --text-dark: #000;
-
+    --color-primary: #000;
     --border-white: #000;
 
     /* background colors */
@@ -70,6 +71,7 @@ body{
     font-family: 'helvetica', serif;
     line-height: 1.7;
     background-color: var(--bg-grey-light);
+    color: var(--color-primary);
 }
 .dark {
     --text-white: #e6e6e6;
@@ -78,6 +80,7 @@ body{
     --bg-white: #000;
     --bg-blue-dark: #000000;
     --bg-indigo: #7577e1;
+    --color-primary: #fff;
     --border-white: #fff;
 }
 
