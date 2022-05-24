@@ -273,9 +273,10 @@
 }
 .discovery-area .btn-custom:hover {
     background: linear-gradient(0.25turn,var(--text-dark) , var(--bg-grey-dark) ,var(--bg-grey-light) );
+    transition: background 1s;
 }
 
-.discovery-area:hover img {
+.btn-custom:hover img {
     animation: discoveryAnimation 600ms ease-in 0s infinite;
 }
 @keyframes discoveryAnimation {

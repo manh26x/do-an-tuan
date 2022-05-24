@@ -24,7 +24,7 @@ function toggleTheme(isChangeTheme) {
         $('#sloganFooter').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
         $('#imgToggle').attr("src","images/icon_dark/mode-dark-icon.png");
         $('.icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
-        $('#nextDouble').attr("src","images/icon_dark/double-next-dark-icon.png");
+        $('#nextDouble, .next-double-icon').attr("src","images/icon_dark/double-next-dark-icon.png");
         if(isChangeTheme !== false) {
             window.localStorage.setItem("theme", "light");
             $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
@@ -39,7 +39,7 @@ function toggleTheme(isChangeTheme) {
         $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
         $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
         $('.icon-plus').attr("src","images/icon_light/plus-light-icon.png");
-        $('#nextDouble').attr("src","mages/icon_light/next-double-light-icon.png");
+        $('#nextDouble, .next-double-icon').attr("src","mages/icon_light/next-double-light-icon.png");
         if(isChangeTheme !== false) {
             window.localStorage.setItem("theme", "dark");
             $('#idLogoHome').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
@@ -69,7 +69,7 @@ $( document ).ready(function() {
     $('#calendar').css('width', defaultWith);
     $('#calculatePrice').css('width', defaultWith);
     $('.contact-detail-form, .model-review').css('width', defaultWith);
-
+    $('.team-table').css('width', defaultWith);
     defaultWith -=4;
     let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";

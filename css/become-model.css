@@ -8,7 +8,7 @@
 }
 .grid-model-form {
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 9fr 1fr;
 }
 .grid-rows-11 {
     grid-row-start: 1;
@@ -49,4 +49,41 @@
 textarea {
     margin: 0!important;
     height: 100%;
+}
+.grid-model-last-step {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 1fr;
+}
+.grid-model-last-step > div {
+    border: 2px solid var(--border-white);
+}
+.avatar-upload {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.avatar-upload .avatar-edit {
+    position: absolute;
+    z-index: 1;
+}
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-preview {
+    height: 100%;
+    position: relative;
+}
+.avatar-upload .avatar-preview > div {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+input[type='file'] {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
 }

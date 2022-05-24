@@ -1,0 +1,70 @@
+.contact-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.letter-filter-box {
+    width: 100%;
+    border: 2px solid var(--border-white);
+    display: flex;
+    justify-content: space-around;
+}
+.letter-filter-box > span {
+    cursor: pointer;
+    padding: 30px 10px;
+
+}
+.empty-box-150 {
+    width: 100%;
+    height: 150px;
+}
+.list-contact {
+    width: 100%;
+}
+.contact-item {
+    width: 100%;
+    display: grid;
+    padding: 40px 0;
+    grid-template-columns: 1fr 5fr 5fr 2fr;
+}
+ .contact-item-name, .contact-item-position {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+     display: flex;
+     align-items: center;
+}
+.contact-item .contact-item-social {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}
+.contact-item-index {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.letter-social {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    border: 4px solid var(--border-white);
+    padding: 6px 20px;
+    margin-right: 32px;
+
+}
+.filterSelected {
+    background-color: var(--fc-highlight-color);
+}
+.btn-custom:hover p {
+   color: var(--text-white);
+    transition: color 1s;
+}

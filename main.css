@@ -550,3 +550,26 @@ li::marker {
         opacity: 1;
     }
 }
+.border-left-right {
+    border: 2px solid var(--border-white);
+    border-top: none;
+    border-bottom: none;
+}
+.border-top-left-right {
+    border: 2px solid var(--border-white);
+    border-bottom: none;
+}
+.border-top-bottom {
+    border: 2px solid var(--border-white);
+    border-left: none;
+    border-right: none;
+}
+.border-bottom {
+    border: 2px solid var(--border-white);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.none-border-bottom {
+    border-bottom: none;
+}
