@@ -71,8 +71,8 @@ const generateModels = () => {
         setTimeout(() => {
             $('#model'+i).css('background-image', 'url(./images/models-page-full/' + model.image + '.jpg)');
             let htmlInfo =
-                '           <div class="blur-cover" style="cursor: pointer" onclick="gotoModelDetail()" style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 29rem; height: 640px; filter: blur(2px); transform: translate(-25px,-25px)"></div>\n' +
-                ' <div class="model-item-content">     <div class="model-item-title"><h6>'+model.name+'</h6><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+', true)"> </div>\n' +
+                '           <div class="blur-cover"  style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 29rem; height: 640px; filter: blur(2px); transform: translate(-25px,-25px)"></div>\n' +
+                ' <div class="model-item-content" style="cursor: pointer" onclick="gotoModelDetail()">     <div class="model-item-title" ><h6>'+model.name+'</h6><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+', true)"> </div>\n' +
                 '                <p style="visibility: hidden">Height: '+model.height+'</p>\n' +
                 '                <p  style="visibility: hidden">Bust: '+model.bust+'</p>\n' +
                 '                <p  style="visibility: hidden">Waist: '+model.waist+'</p>\n' +
