@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
 }
-.studio-review .left {
+.left {
     border: 2px solid var(--border-white);
     border-right: none;
     padding: 40px;
@@ -11,7 +11,7 @@
     font-size: 36px;
     line-height: 41px;
 }
-.studio-review .right {
+.right {
     border: 2px solid var(--border-white);
     border-top: none;
     border-bottom: none;
@@ -208,3 +208,4 @@ tr[class="fc-scrollgrid-section fc-scrollgrid-section-body " ]{
     border-top: none ;
     transform: translateY(-10px);
 }
+

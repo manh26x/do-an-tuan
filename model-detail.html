@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/models.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/studio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<nav id="navBar" class="navbar-custom normal-box-padding ">
+    <!-- Brand -->
+    <div class="navbar-custom-content normal-box-padding">
+        <img alt="logo" id="logoHeader" src="images/icon_light/logo-mark-light.png">
+        <!-- Links -->
+        <ul class="group-menu">
+            <li ><a href="#" class="text-font-normal " >SEARCH</a></li>
+            <li ><a href="#" style="margin-left: 80px" id="wishlistLink" class="text-font-normal ">WISH LIST[0]</a></li>
+            <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
+                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="toggle">
+    <a><img alt="" id="imgToggle" width="45px" height="45px" src="images/icon_light/mode-light-icon.png"></a></div>
+<div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
+    <div class="dropdown-content">
+        <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToNews()"><div class="show-menu-item-animation">NEWS</div></a>
+        <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoBecomeModel()"><div class="show-menu-item-animation">BECOME A MODEL</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoReview()"><div class="show-menu-item-animation">REVIEW</div></a>
+        <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoContact()"><div class="show-menu-item-animation">CONTACT</div></a>
+    </div>
+</div>
+<div class="container ">
+    <div class="page-header">
+        <h1 class="model-name-header">MODEL NAME</h1>
+    </div>
+    <div class=" model-detail">
+        <div class="left">
+            <video muted preload="auto" src="images/model_imgs_file/model_videos/pexels-shvets-production-7198482.mp4" autoplay></video>
+        </div>
+        <div class="right model-info">
+            <p class="national">Nationality: Korea</p>
+            <div class="param">
+                <span>Height</span>
+                <span>Bust</span>
+                <span>Waist</span>
+                <span>Hips</span>
+                <span>Shoe</span>
+                <span>Hair</span>
+                <span>Eyes</span>
+                <span>cm</span>
+                <span>cm</span>
+                <span>cm</span>
+                <span>cm</span>
+                <span>cm</span>
+                <span>cm</span>
+                <span>color</span>
+            </div>
+            <p class="birthdate">Birthdate: October 10, 1995</p>
+            <p class="model-description">Eiji is a model with a bright appearance and positive energy. He appeared on the catwalk during Korea Fashion Week, appeared on the pages of Vogue Magazine and Opium.</p>
+            <p>Achievements: <span style="text-decoration: underline">Trending</span>   <span style="text-decoration: underline"> Top 10 Models</span>   <span style="text-decoration: underline">Runway</span><br />
+              &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="text-decoration: underline">The money list</span></p>
+            <p style="margin-top: 72px">Social media: <span class="letter-social">O</span> <span class="letter-social">f</span></p>
+
+        </div>
+    </div>
+    <div class="model-detail">
+        <div class="left "><button class="btn-custom align-center add-to-list" ><img src="images/icon_dark/heart-dark-icon.png"> ADD TO LIST </button></div>
+        <div class="right ">
+            <div class="discovery-area">
+                <button  class="btn-custom btn-icon-right "><div></div><p class="heading">COMPCARD</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+            </div>
+        </div>
+    </div>
+    <div class="contact-detail-form">
+        <div class="contact-detail-title"><h2>Have a question? Drop us a line!</h2></div>
+        <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Name"></div>
+        <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Phone number"></div>
+        <div class="contact-detail-item"><input type="text" class="input-text" placeholder="Email"></div>
+        <div class="contact-detail-item" ><textarea style="height: 100%" class="input-text" placeholder="Message" rows="3"></textarea></div>
+        <div class="contact-detail-item"><button class="btn-custom" style="border-top: 2px solid var(--border-white)"><p class="paragraph">SEND MESSAGE</p></button> </div>
+    </div>
+    <div class="page-header">
+        <h1>OUR TEAM</h1>
+    </div>
+    <div class="team-table">
+        <div class="letter-filter-box">
+        </div>
+        <div class="empty-box-150 border-top border-left-right"></div>
+        <div class="list-contact border-top-left-right">
+            <div class="contact-item ">
+                <span class="contact-item-index">[01]</span>
+                <span class="contact-item-name">Giap Manh Tuan</span>
+                <span class="contact-item-position">CEO/DIRECTOR</span>
+                <span class="contact-item-social">
+                    <span class="letter-social">M</span>
+                    <span class="letter-social">O</span>
+                    <span class="letter-social">P</span>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="page-header">
+        <h1>FOLLOW</h1>
+    </div>
+    <div class="contact-detail-form discovery-area">
+        <button  class="btn-custom btn-icon-right none-border-bottom"><p class="heading">Facebook</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+        <button  class="btn-custom btn-icon-right none-border-bottom"><p class="heading">Instagram</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+        <button  class="btn-custom btn-icon-right"><p class="heading">Tiktok</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+
+    </div>
+</div>
+<footer class="grid-container-footer">
+    <div class="email-area">
+        <p class="paragraph">NEWSLETTER</p>
+        <p class="paragraph" style="margin-top: 40px">Subscribe to our newsletter</p>
+        <form class="email-form">
+            <input class="input-text" placeholder="Email">
+            <button class="btn-custom"><p>SUBSCRIBE</p></button>
+        </form>
+    </div>
+    <div class="main-area">
+        <p class="paragraph company">THE COMPANY</p>
+        <p class="paragraph client">CLIENT SERVICES</p>
+        <p class="paragraph contact">CONTACT US</p>
+        <p class="paragraph connect">CONNECT</p>
+        <p class="paragraph imodel">Why Imodels</p>
+        <p class="paragraph faq">FAQ</p>
+        <p class="paragraph phone">[+84] 827 700 695</p>
+        <p class="paragraph facebook">Facebook</p>
+        <p class="paragraph we">Who we are</p>
+        <p class="paragraph contactus">contacts@imodels.com</p>
+        <p class="paragraph insta">Instagram</p>
+        <p class="paragraph linkedin">LinkedIn</p>
+    </div>
+    <div class="footer-area">
+        <div class="logo-footer">
+            <img id="logoFooter" alt="" src="images/logo-black.png">
+            <img id="sloganFooter" alt="" src="images/icon_light/logo-type-light/home_logo.png">
+        </div>
+        <p class="paragraph">2022 IMODELS. All rights reserved</p>
+        <div class="term-area">
+            <p class="paragraph" style="cursor: pointer">Terms & Conditions</p>
+            <p class="paragraph">Privacy Policy</p>
+        </div>
+
+    </div>
+</footer>
+
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+</body>
+</html>

@@ -27,7 +27,7 @@
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
     <div class="dropdown-content">
         <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
-        <a  class="text-font-normal normal-box-padding"  href="#"><div class="show-menu-item-animation">NEWS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToNews()"><div class="show-menu-item-animation">NEWS</div></a>
         <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
         <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
         <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoBecomeModel()"><div class="show-menu-item-animation">BECOME A MODEL</div></a>
@@ -65,6 +65,23 @@
             <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Waist [55] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
             <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Hips [80] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
             <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Shoe [37]</p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+        </div>
+        <div class="modal modal-center hidden-modal">
+            <div class="modal-box model-modal-alert">
+                <div class="modal-header">
+                    <div></div>
+                    <h2>Imodels says</h2>
+                    <div class="border-icon" onclick="closeModal()">
+                        <img  src="images/icon_dark/x-dark-icon.png" />
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <p class="modal-content-text">MODEL NAME ADDED TO WISHLIST</p>
+                </div>
+                <div class="modal-footer discovery-area">
+                    <button onclick="gotoWishList()" class="btn-custom btn-icon-right"><p></p><p class="modal-footer-text">Go to wish list</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+                </div>
+            </div>
         </div>
         <div class="space-area"></div>
         <div class="models-area  " id="models">

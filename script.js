@@ -160,6 +160,31 @@ const gotoContact = () => {
     console.log(location)
 }
 $('#wishlistLink').click(() => {
+   gotoWishList();
+});
+const gotoWishList = () => {
     let pattern = /.*.html/;
     location.replace(location.pathname.replace(pattern, 'wish-list.html'));
-});
+}
+const closeModal = () => {
+    $('.modal').removeClass('show-modal');
+    $('.modal').addClass('hidden-modal-animation');
+    setTimeout(() => $('.modal').addClass('hidden-modal'), 500)
+}
+const goToNews = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'news.html'));
+
+}
+const goToWhoWeAre = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'who-we-are.html'));
+}
+const gotoMemberDetail = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'member-detail.html'));
+}
+const gotoModelDetail = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'model-detail.html'));
+}
