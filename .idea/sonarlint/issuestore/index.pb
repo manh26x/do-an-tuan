@@ -175,3 +175,13 @@ K
 fullcalendar/locales-all.js,6\a\6ad65679950a9e091197175ccca79de7e8b482a1
 E
 fullcalendar/main.css,e\f\ef00e850490e029c85e51c9cf18e1d523884c9a8
+@
+css/wishlist.css,9\2\926da06b894f975580c8e858fe7b9c3fb6730b85
+D
+css/become-model.css,a\c\acdf36f660b4f1014b71faea132ab06e519ca879
+B
+js/become-model.js,b\b\bb21913563e5c1bdc6247beb411e95a7def1b0f6
+<
+js/studio.js,a\9\a9b7388a5dec0730048a87f73770783c78081029
+>
+js/wishList.js,5\8\58cfc781809efc819679f362dd81a080b072aef6

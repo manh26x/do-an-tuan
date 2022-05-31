@@ -17,16 +17,16 @@
         <img alt="logo" id="logoHeader" src="images/icon_light/logo-mark-light.png">
         <!-- Links -->
         <ul class="group-menu">
-            <li ><a href="#" class="text-font-normal " >SEARCH</a></li>
+            <li ><a href="#" class="text-font-normal " onclick="searchClick()">SEARCH</a></li>
             <li ><a href="#" style="margin-left: 80px" id="wishlistLink" class="text-font-normal ">WISH LIST[0]</a></li>
             <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
-                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" class="x-icon" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
             </li>
         </ul>
     </div>
 </nav>
 <div id="toggle">
-    <a><img alt="" id="imgToggle" width="45px" height="45px" src="images/icon_light/mode-light-icon.png"></a></div>
+    <a><img alt="" id="imgToggle" class="img-toggle" width="45px" height="45px" src="images/icon_light/mode-light-icon.png"></a></div>
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
     <div class="dropdown-content">
         <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
@@ -38,6 +38,23 @@
         <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoContact()"><div class="show-menu-item-animation">CONTACT</div></a>
     </div>
 </div>
+<div id="searchDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
+    <div class="dropdown-content">
+        <label class="search-icon">
+            <input placeholder="SEARCH...">
+            <img class="x-icon" onclick="closeSearch()" height="35px" src="images/icon_dark/x-dark-icon.png">
+        </label>
+        <div class="content-search">
+            <h1>POPULAR SEARCHES</h1>
+            <p>Women Model</p>
+            <p>Studio</p>
+            <p>Runway</p>
+            <p>News</p>
+
+        </div>
+    </div>
+</div>
+
 <div class="container ">
     <div class="page-header">
         <h1>STUDIO</h1>

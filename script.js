@@ -19,13 +19,14 @@ function toggleTheme(isChangeTheme) {
     if (theme === "dark") {
 
         $('#logoHeader').attr("src","images/icon_light/logo-mark-light.png");
-        $('#idXSquare>img').attr("src","images/icon_light/x-square-light-icon.png");
+        $('#idXSquare>img, .x-icon').attr("src","images/icon_light/x-square-light-icon.png");
         $('#idLogoHome').attr("src","images/icon_light/logo-type-light/home_logo.png");
         $('#logoFooter').attr('src', "images/icon_light/logo-mark-light.png");
         $('#sloganFooter').attr("src","images/icon_light/logo-type-light/home_logo.png");
         $('#imgToggle').attr("src","images/icon_light/mode-light-icon.png");
         $('.icon-plus').attr("src","images/icon_light/plus-light-icon.png");
         $('#nextDouble, .next-double-icon').attr("src","images/icon_light/next-double-light-icon.png");
+        $('.x-icon').attr("src","images/icon_light/x-light-icon.png");
         if(isChangeTheme !== false) {
             window.localStorage.setItem("theme", "light");
             document.body.classList.toggle("dark");
@@ -36,6 +37,7 @@ function toggleTheme(isChangeTheme) {
         $('#idLogoHome').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
         $('#logoHeader').attr("src","images/icon_dark/logo-mark-dark.png");
         $('#idXSquare>img').attr("src","images/icon_dark/x-square-dark-icon.png");
+        $('.x-icon').attr("src","images/icon_dark/x-dark-icon.png");
         $('#logoFooter').attr('src', "images/icon_dark/logo-mark-dark.png");
         $('#sloganFooter').attr("src","images/icon_dark/logo-type-dark/home_logo.png");
         $('#imgToggle').attr("src","images/icon_dark/mode-dark-icon.png");
@@ -110,6 +112,14 @@ $( document ).ready(function() {
     getWishList();
 
 });
+const searchClick = () => {
+    $('#searchDropdown').css('display', 'unset');
+    menuClickedConst = true;
+}
+const closeSearch = () => {
+    $('#searchDropdown').css('display', 'none');
+    menuClickedConst = false;
+}
 getWishList = () => {
     if(localStorage.getItem('models')) {
         models = JSON.parse(localStorage.getItem('models'));
