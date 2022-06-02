@@ -1,41 +1,71 @@
+let toggle1 = true;
 $('.categories-area').click(() => {
-    let parent = $('.categories-dropdown-area');
-    parent.css({'visibility': 'unset', 'height':'auto'});
-    let children=$('.categories-dropdown-area').children();
-    children.each(function(idx, val){
-        $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
-    });
+    if(toggle1) {
+        let parent = $('.categories-dropdown-area');
+        parent.css({'visibility': 'unset', 'height':'auto'});
+        let children=$('.categories-dropdown-area').children();
+        children.each(function(idx, val){
+            $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
+        });
+        $('.categories-area .icon-small').css('transform', 'rotate(45deg)')
+
+    } else {
+        $('.categories-dropdown-area').css({'visibility': 'hidden', 'height': '0'});
+        $('.categories-area .icon-small').css('transform', 'rotate(0deg)')
+    }
+    toggle1 =!toggle1;
 
 });
-$('.categories-dropdown-area').mouseleave(() =>  $('.categories-dropdown-area').css({'visibility': 'hidden', 'height':'0'}));
+let toggle2 = true;
 $('.gender-area').click(() => {
-    let parent = $('.gender-dropdown-area');
-    parent.css({'visibility': 'unset', 'height':'auto'});
-    let children=parent.children();
-    children.each(function(idx, val){
-        $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
-    });
-});
-$('.gender-dropdown-area').mouseleave(() =>  $('.gender-dropdown-area').css({'visibility': 'hidden', 'height':'0'}));
-$('.location-area').click(() => {
-    let parent = $('.location-dropdown-area');
-    parent.css({'visibility': 'unset', 'height':'auto'});
-    let children=parent.children();
-    children.each(function(idx, val){
-        $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
-    });
-});
-$('.location-dropdown-area').mouseleave(() =>  $('.location-dropdown-area').css({'visibility': 'hidden', 'height':'0'}));
-$('.measurements-area').click(() => {
-    let parent = $('.measurements-dropdown-area');
-    parent.css({'visibility': 'unset', 'height':'auto'});
-    let children=parent.children();
-    children.each(function(idx, val){
-        $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
-    });
+    if(toggle2) {
+        let parent = $('.gender-dropdown-area');
+        parent.css({'visibility': 'unset', 'height':'auto'});
+        let children=parent.children();
+        children.each(function(idx, val){
+            $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
+        });
+        $('.gender-area .icon-small').css('transform', 'rotate(45deg)');
+    } else {
+        $('.gender-area .icon-small').css('transform', 'rotate(0deg)');
+        $('.gender-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
+    }
+    toggle2 = !toggle2;
 
 });
-$('.measurements-dropdown-area').mouseleave(() =>  $('.measurements-dropdown-area').css({'visibility': 'hidden', 'height':'0'}));
+let toggle3 = true;
+$('.location-area').click(() => {
+    if(toggle3) {
+        let parent = $('.location-dropdown-area');
+        parent.css({'visibility': 'unset', 'height':'auto'});
+        let children=parent.children();
+        children.each(function(idx, val){
+            $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
+        });
+        $('.location-area .icon-small').css('transform', 'rotate(45deg)');
+    } else {
+        $('.location-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
+        $('.location-area .icon-small').css('transform', 'rotate(0deg)');
+    }
+    toggle3 = !toggle3;
+
+});
+let toggle4 = true;
+$('.measurements-area').click(() => {
+    if(toggle4) {
+        let parent = $('.measurements-dropdown-area');
+        parent.css({'visibility': 'unset', 'height':'auto'});
+        let children=parent.children();
+        children.each(function(idx, val){
+            $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
+        });
+        $('.measurements-area .icon-small').css('transform', 'rotate(45deg)');
+    } else {
+        $('.measurements-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
+        $('.measurements-area .icon-small').css('transform', 'rotate(0deg)');
+    }
+    toggle4 = !toggle4
+});
 
 $(document).ready(() => {
 
@@ -45,7 +75,7 @@ $(document).ready(() => {
         localStorage.setItem('models', JSON.stringify(models));
     }
     $('#quantityModel').text('['+models.length+']')
-    generateModels();
+    generateModels(false);
 });
 const addWishList = (index, clicked) =>{
     models[index].wished = true;
@@ -53,34 +83,44 @@ const addWishList = (index, clicked) =>{
     if(clicked === true) {
         $('.modal').removeClass('hidden-modal');
         $('.modal').addClass('show-modal');
+        $('.modal').css('animation', 'showModal 500ms ease-in 0ms ')
         $('.modal-content-text').text(models[index].name.toUpperCase() + ' ADDED TO WISH LIST!');
         setTimeout(() => closeModal() , 3000);
     }
 
-    generateModels();
+    generateModels(false);
     getWishList();
+    for(let i =1; i<=4; i++) {
+        conChoTuan(i);
+    }
 }
 
-let modelSize = 8;
-const generateModels = () => {
+let modelSize = 12;
+const generateModels = (expaned) => {
     let modelsChildren = '';
-    modelSize += 4;
+    if(expaned) {
+        modelSize += 4;
+    }
+    let lastI = 0;
     models.slice(0, modelSize).forEach((model,i) => {
         modelsChildren += '<div class="model-item" id="model' + i+'"></div>';
         model.id = i;
+        lastI = i;
         setTimeout(() => {
             $('#model'+i).css('background-image', 'url(./images/models-page-full/' + model.image + '.jpg)');
             let htmlInfo =
-                '           <div class="blur-cover"  style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 29rem; height: 640px; filter: blur(2px); transform: translate(-25px,-25px)"></div>\n' +
-                ' <div class="model-item-content" style="cursor: pointer" onclick="gotoModelDetail()">     <div class="model-item-title" ><h6>'+model.name+'</h6><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+', true)"> </div>\n' +
+                '           <div class="blur-cover"  style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 22.5rem; height: 640px; filter: blur(2px); transform: translate(-20px,-20px)" ></div>\n' +
+                ' <div class="model-item-content" >     <div class="model-item-title" ><h6>'+model.name+'</h6><div class="bg-grey"><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+', true)"> </div></div>\n' +
                 '                <p style="visibility: hidden">Height: '+model.height+'</p>\n' +
                 '                <p  style="visibility: hidden">Bust: '+model.bust+'</p>\n' +
                 '                <p  style="visibility: hidden">Waist: '+model.waist+'</p>\n' +
                 '                <p  style="visibility: hidden">Hips: '+model.hips+'</p>\n' +
                 '                <p  style="visibility: hidden">Shoe: '+model.shoe+'</p>\n' +
                 '                <p  style="visibility: hidden">Hair: '+model.hair+'</p>\n' +
-                '                <p  style="visibility: hidden">Eyes: '+model.eyes+'</p> </div>'+
-                '                <div class="country" style="z-index: 3;"><h6>'+model.location+'</h6></div>';
+                '                <p  style="visibility: hidden">Eyes: '+model.eyes+'</p> ' +
+                '<div class="country" style="z-index: 3;" ><h6>'+model.location+'</h6></div></div>' +
+                ' <div  style=" position: absolute;  width: 22.5rem; height: 640px; z-index: 11; transform: translate(-20px,-20px) cursor: pointer" onclick="gotoModelDetail()"></div>'+
+                '                ';
             $('#model'+i).html(htmlInfo);
             $('#model'+i).hover(
                 () => {
@@ -110,6 +150,12 @@ const generateModels = () => {
         }, 100);
     });
     $('#models').html(modelsChildren);
+    if(modelSize > 12 && expaned) {
+        $('html,body').animate({
+            scrollTop: $('#model'+lastI).position().top
+        });
+    }
+
 }
 
 let models =[

@@ -58,10 +58,11 @@ $( document ).ready(function() {
     $('.model-list-show').css('width', defaultWith);
     $('#idMoveHome').css('width', defaultWith);
     $('.navbar-custom-content').css('width', defaultWith);
-    $('.grid-model-container').css('width', defaultWith-2);
+    $('.grid-model-container').css('width', defaultWith);
     $('.grid-model-gender-container').css('width', defaultWith-2);
     $('.year-detail-box').css('width', defaultWith);
     $('.list-ranking-choose').css('width', defaultWith/2-2);
+    $('.defaultWith_div_4').css('width', defaultWith/4+1)
     $('.list-ranking-choose-right').css('width', defaultWith/2-2);
     $('.list-ranking-choose-right').css('margin-left', defaultWith/2-2);
     $('.year-item').css('width', defaultWith/3-1);
@@ -74,6 +75,7 @@ $( document ).ready(function() {
     $('#calculatePrice').css('width', defaultWith);
     $('.contact-detail-form, .model-review').css('width', defaultWith);
     $('.team-table').css('width', defaultWith);
+    $('.grid-model-detail-container').css('width',defaultWith)
     defaultWith -=4;
     let imgSlideWidth = defaultWith/13;
     const baseUrlImg = "images/imgs_homepage/slide";
@@ -178,7 +180,7 @@ const gotoWishList = () => {
 }
 const closeModal = () => {
     $('.modal').removeClass('show-modal');
-    $('.modal').addClass('hidden-modal-animation');
+    $('.modal').css('animation','hiddenModal 500ms ease-in 100ms ')
     setTimeout(() => $('.modal').addClass('hidden-modal'), 500)
 }
 const goToNews = () => {
@@ -197,4 +199,13 @@ const gotoMemberDetail = () => {
 const gotoModelDetail = () => {
     let pattern = /.*.html/;
     location.replace(location.pathname.replace(pattern, 'model-detail.html'));
+}
+const gotoSendTheList = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'send-the-list.html'));
+}
+const conChoTuan = (stt) => {
+    let xPosition = (defaultWith*(stt-1)/4 );
+    xPosition += stt-1;
+    $('.stt'+stt).css('transform', 'translate('+xPosition+'px, 87px)');
 }

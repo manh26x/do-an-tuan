@@ -494,14 +494,18 @@ li::marker {
     line-height: 23px;
     cursor: pointer;
 }
-.email-form .btn-custom:hover, .contact-detail-item .btn-custom:hover {
+.email-form .btn-custom:hover, .contact-detail-item .btn-custom:hover, .grid-model-detail-container .btn-custom:hover {
    animation: animationButton 1s ease-in 0s ;
     background: linear-gradient(0.25turn, #c4c4c4, var(--bg-grey-dark), var(--bg-grey-light), var(--bg-grey-dark), #c4c4c4);
 
 }
 
-.email-form .btn-custom:hover > p, .contact-detail-item .btn-custom:hover > p {
+.email-form .btn-custom:hover > p, .contact-detail-item .btn-custom:hover > p, .grid-model-detail-container .btn-custom:hover  > p {
     animation: animationButtonText 0.5s ease-in 0s ;
+    color: var(--text-dark);
+}
+.nonactive p{
+    color: #989090!important;
 }
 #logoHeader {
     cursor: pointer;
@@ -553,11 +557,16 @@ li::marker {
         opacity: 1;
     }
 }
+.col-6 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+}
 .border-left-right {
     border: 2px solid var(--border-white);
     border-top: none;
     border-bottom: none;
 }
+
 .border-top-left-right {
     border: 2px solid var(--border-white);
     border-bottom: none;
@@ -647,15 +656,11 @@ li::marker {
 }
 .show-modal {
     visibility: unset;
-    animation: showModal 500ms ease-in 100ms ;
     z-index: 1000;
 }
 .hidden-modal {
     visibility: hidden;
     z-index: -1;
-}
-.hidden-modal-animation {
-    animation: hiddenModal 500ms ease-in 100ms ;
 }
 @keyframes hiddenModal {
 
@@ -670,7 +675,7 @@ li::marker {
 }
 @keyframes showModal {
     0% {
-        transform: translateY(-100px) scale(0.1);
+        transform: translateY(-100px) scale(0);
         opacity: 0;
     }
     100% {
@@ -851,4 +856,15 @@ li::marker {
     font-size: 36px;
     line-height: 41px;
     margin-bottom: 40px;
+}
+.border-right-bottom {
+    border: 2px solid var(--border-white);
+    border-top: none;
+    border-left: none;
+}
+.border-top {
+    border-top:  2px solid var(--border-white);
+}
+.none-border-right {
+    border-right: none;
 }

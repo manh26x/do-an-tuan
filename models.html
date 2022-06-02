@@ -58,29 +58,29 @@
         <h6>Found models: <h6 id="quantityModel">[quantity]</h6></h6>
     </div>
     <div class="grid-model-container">
-        <button class="categories-area btn-custom btn-icon-right"><p></p><p class="paragraph">CATEGORIES</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="gender-area btn-custom btn-icon-right"><p></p><p class="paragraph">GENDER</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="location-area btn-custom btn-icon-right"><p></p><p class="paragraph">MODEL LOCATION</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <button class="measurements-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEASUREMENTS</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
-        <div class="dropdown-filter categories-dropdown-area">
-            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Main</p> </button>
-            <button class="btn-custom btn-left"><p class="paragraph">Development</p> </button>
+        <button  class="none-border-right categories-area btn-custom btn-icon-right"><p></p><p class="paragraph">CATEGORIES</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="none-border-right gender-area btn-custom btn-icon-right"><p></p><p class="paragraph">GENDER</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="none-border-right location-area btn-custom btn-icon-right"><p></p><p class="paragraph">MODEL LOCATION</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <button class="  measurements-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEASUREMENTS</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
+        <div class="dropdown-filter stt1 defaultWith_div_4 categories-dropdown-area">
+            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Main</p> </button>
+            <button class="btn-custom none-border-bottom btn-left"><p class="paragraph">Development</p> </button>
             <button class="btn-custom btn-left"><p class="paragraph">New faces</p> </button>
         </div>
-        <div class="dropdown-filter  gender-dropdown-area">
-            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Female</p> </button>
+        <div class="dropdown-filter stt2 defaultWith_div_4 gender-dropdown-area">
+            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Female</p> </button>
             <button class="btn-custom none-opacity btn-left"><p class="paragraph">Male</p> </button>
         </div>
-        <div class="dropdown-filter location-dropdown-area">
-            <div class=" btn-left none-opacity btn-disable-hover"><input type="text" class="input-text" placeholder="Search"></div>
-            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Vietnam</p> </button>
+        <div class="dropdown-filter stt3 defaultWith_div_4 location-dropdown-area">
+            <div class=" btn-left none-opacity btn-disable-hover" style="border-bottom: none"><input style="transition: none" type="text" class="input-text " placeholder="Search"></div>
+            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Vietnam</p> </button>
             <button class="btn-custom none-opacity btn-left"><p class="paragraph">Singapore</p> </button>
         </div>
-        <div class="dropdown-filter measurements-dropdown-area">
-            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Height [167] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
-            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Bust [70] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
-            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Waist [55] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
-            <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Hips [80] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+        <div class="dropdown-filter stt4 defaultWith_div_4 measurements-dropdown-area">
+            <div style="border-bottom: none" class=" btn-left  none-opacity  btn-disable-hover"><p class="paragraph">Height [167] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div style="border-bottom: none" class=" btn-left  none-opacity  btn-disable-hover" ><p class="paragraph">Bust [70] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div style="border-bottom: none" class=" btn-left  none-opacity btn-disable-hover"><p class="paragraph">Waist [55] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
+            <div style="border-bottom: none" class=" btn-left  none-opacity btn-disable-hover"><p class="paragraph">Hips [80] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
             <div class=" btn-left none-opacity btn-disable-hover"><p class="paragraph">Shoe [37]</p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>
         </div>
         <div class="modal modal-center hidden-modal">
@@ -100,14 +100,11 @@
                 </div>
             </div>
         </div>
-        <div class="space-area"></div>
-        <div class="models-area  " id="models">
-            <div class="model-item">
-
-            </div>
+        <div class="space-area border-left-right"></div>
+        <div class="models-area  " id="models" style="border: 1px solid var(--border-white)">
         </div>
         <div class="discovery-area">
-            <button onclick="generateModels()" class="btn-custom btn-icon-right"><p></p><p class="heading">DISCOVER MORE</p><img id="nextDouble" src="images/icon_light/next-double-light-icon.png"></button>
+            <button onclick="generateModels(true)" class="btn-custom btn-icon-right"><p></p><p class="heading">DISCOVER MORE</p><img id="nextDouble" src="images/icon_light/next-double-light-icon.png"></button>
         </div>
     </div>
    </div>
