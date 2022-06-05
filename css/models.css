@@ -417,10 +417,10 @@
 .grid-compcard {
     display: grid;
     grid-template-areas:
-                    'video img1 img2 info'
-                    'video img1 img2 info'
-                    'video img3 img4 info'
-                    'contact img3 img4 info'
+                    'video img img info'
+                    'video img img info'
+                    'video img img info'
+                    'contact img img info'
                      'contact name name download'   ;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-column-gap: 20px;
@@ -470,12 +470,23 @@
     position: absolute;
     transform: translate(16px, 16px);
 }
+.img-area {
+    border: none!important;
+    grid-area: img;
+    display: grid;
+    grid-template-areas:
+                    ' img1 img4 '
+                    ' img1 img4 '
+                    ' img2 img3 '
+                    ' img2 img3 ';
+    grid-template-columns: 1fr 1fr;
+}
 .img-area4{
     grid-area: img4;
 }
 .img-area1, .img-area2, .img-area3, .img-area4 {
-    height: 363px;
-
+    min-height: 363px;
+    height: 100%;
 }
 .img-area1 img, .img-area2 img, .img-area3 img, .img-area4 img {
     height: 100%;
