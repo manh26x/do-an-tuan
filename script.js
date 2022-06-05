@@ -207,5 +207,6 @@ const gotoSendTheList = () => {
 const conChoTuan = (stt) => {
     let xPosition = (defaultWith*(stt-1)/4 );
     xPosition += stt-1;
-    $('.stt'+stt).css('transform', 'translate('+xPosition+'px, 87px)');
+    $('.stt'+stt).css('transform', 'translate('+xPosition+'px, 86px)');
 }
+$()

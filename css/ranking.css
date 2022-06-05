@@ -50,17 +50,17 @@
     display: none;
     flex-direction: column;
     z-index: 4;
+    transform: translateY(86px);
 }
 .list-ranking-choose .btn-custom,.list-ranking-choose-right .btn-custom {
     text-align: left!important;
 }
 .title {
-    border: 1px solid var(--border-white);
+    border: 2px solid var(--border-white);
      grid-area: title;
 }
 .description {
      grid-area: description;
-    border: 1px solid var(--border-white);
 }
 .description .paragraph {
     padding: 27px 24px;
@@ -70,7 +70,6 @@
     margin-left: 0;
     padding: 0 16px;
     color: var(--text-dark);
-    border-bottom: 1px solid var(--border-white);
     font-weight: 400;
     font-size: 100px;
     line-height: 115px;
@@ -159,7 +158,7 @@
     'years years'
 ;
     grid-auto-columns: 1fr;
-    border: 1px solid var(--border-white);
+    border: 2px solid var(--border-white);
 }
 .men-area {
     grid-area: men;

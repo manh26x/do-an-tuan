@@ -409,7 +409,7 @@ li::marker {
 .company {
     grid-area: company;
 }
-.client {
+.client-area {
     grid-area: client;
 }
 .contact {
@@ -583,7 +583,7 @@ li::marker {
     border-right: none;
 }
 .none-border-bottom {
-    border-bottom: none;
+    border-bottom: none!important;
 }
 .modal {
     position: fixed;
@@ -866,5 +866,15 @@ li::marker {
     border-top:  2px solid var(--border-white);
 }
 .none-border-right {
-    border-right: none;
+    border-right: none!important;
+}
+.none-border-top {
+    border-top: none!important;
+}
+
+.none-border-left {
+    border-left: none!important;
+}
+.none-border {
+    border: none!important;
 }

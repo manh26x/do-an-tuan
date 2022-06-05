@@ -3,10 +3,6 @@ M
 components/header/header.html,8\5\85eb319b73560a3ed7787bf54fbca9ac25297ebd
 W
 'images/models-page-full/model-info.json,5\2\5250509418a6ec8e1223ad59bd75b7056988683f
-?
-css/ranking.css,0\f\0f8c87a61934f004b1cacceadce5dd6998af3661
-=
-js/ranking.js,6\e\6eb7327da6f34b400d8797ac209fc893aa1414e0
 J
 fullcalendar/locales/uk.js,6\d\6d574c6196f0e38a209e70b9843c9e858b425950
 J
@@ -177,8 +173,6 @@ E
 fullcalendar/main.css,e\f\ef00e850490e029c85e51c9cf18e1d523884c9a8
 @
 css/wishlist.css,9\2\926da06b894f975580c8e858fe7b9c3fb6730b85
-D
-css/become-model.css,a\c\acdf36f660b4f1014b71faea132ab06e519ca879
 B
 js/become-model.js,b\b\bb21913563e5c1bdc6247beb411e95a7def1b0f6
 <
@@ -191,10 +185,3 @@ A
 js/modelInfo.json,a\f\af2edd50418cdde3d56232189c2a9cf28f6dcf30
 =
 js/contact.js,f\9\f917cb226e94797a83c5c771d256deb21be2d555
-:
-
-index.html,f\6\f6013a00b362253c64368d6eebc50ea2131754e2
-<
-ranking.html,1\b\1b93624e03afc8b8a8c0db15a28c62a4cef8f9e8
-9
-	news.html,7\0\70d00cb2e9f170373c2c61ebf7b269f45bbe36c1

@@ -76,6 +76,9 @@ $(document).ready(() => {
     }
     $('#quantityModel').text('['+models.length+']')
     generateModels(false);
+    for(let i =1; i<=4; i++) {
+        conChoTuan(i);
+    }
 });
 const addWishList = (index, clicked) =>{
     models[index].wished = true;
@@ -90,9 +93,7 @@ const addWishList = (index, clicked) =>{
 
     generateModels(false);
     getWishList();
-    for(let i =1; i<=4; i++) {
-        conChoTuan(i);
-    }
+
 }
 
 let modelSize = 12;

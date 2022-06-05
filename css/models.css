@@ -285,7 +285,7 @@
     transition: background 1s;
 }
 
-.discovery-area:hover  img {
+.discovery-area .btn-custom:hover  img {
     animation: discoveryAnimation 600ms ease-in 0s infinite;
 }
 @keyframes discoveryAnimation {

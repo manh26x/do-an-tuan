@@ -15,9 +15,26 @@ $(document).ready(() => {
     $('.list-ranking-choose-right').hover(() => {},
         () =>  $('.list-ranking-choose-right').css('display', 'none'));
 })
+let toggleRankMen =  true;
 const showListRankingMen = () => {
-    $('.list-ranking-choose').css('display', 'flex')
+    if(toggleRankMen) {
+        $('.list-ranking-choose').css('display', 'flex');
+        $('.men-area .icon-plus').css('transform', 'rotate(45deg)');
+    } else  {
+        $('.list-ranking-choose').css('display', 'none');
+        $('.men-area .icon-plus').css('transform', 'rotate(0deg)');
+    }
+
+    toggleRankMen = !toggleRankMen;
 }
+let toggleRankGirl = true;
 const showListRankingWomen = () => {
-    $('.list-ranking-choose-right').css('display', 'flex')
+    if(toggleRankGirl) {
+        $('.list-ranking-choose-right').css('display', 'flex');
+        $('.women-area .icon-plus').css('transform', 'rotate(45deg)');
+    } else  {
+        $('.list-ranking-choose-right').css('display', 'none');
+        $('.women-area .icon-plus').css('transform', 'rotate(0deg)');
+    }
+    toggleRankGirl = !toggleRankGirl;
 }
