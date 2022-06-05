@@ -1,8 +1,6 @@
 
 M
 components/header/header.html,8\5\85eb319b73560a3ed7787bf54fbca9ac25297ebd
-W
-'images/models-page-full/model-info.json,5\2\5250509418a6ec8e1223ad59bd75b7056988683f
 J
 fullcalendar/locales/uk.js,6\d\6d574c6196f0e38a209e70b9843c9e858b425950
 J

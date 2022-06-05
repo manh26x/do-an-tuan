@@ -69,21 +69,23 @@ $('.measurements-area').click(() => {
 
 $(document).ready(() => {
 
-    if(localStorage.getItem('models')) {
-        models = JSON.parse(localStorage.getItem('models'));
-    } else  {
-        localStorage.setItem('models', JSON.stringify(models));
-    }
-    $('#quantityModel').text('['+models.length+']')
-    generateModels(false);
-    for(let i =1; i<=4; i++) {
-        conChoTuan(i);
-    }
-    debugger
+    try {
+        if(localStorage.getItem('models')) {
+            models = JSON.parse(localStorage.getItem('models'));
+        } else  {
+            localStorage.setItem('models', JSON.stringify(models));
+        }
+        $('#quantityModel').text('['+models.length+']')
+        generateModels(false);
+        for(let i =1; i<=4; i++) {
+            conChoTuan(i);
+        }
+    } catch (e) {
 
+    }
     let modelId = parseInt(localStorage.getItem('modelId'));
     if(modelId) {
-        let model = models[modelId-1];
+        let model = models[modelId];
         $('#modelName').text(model.name);
         $('#height').text(model.height);
         $('#bust').text(model.bust);
@@ -92,8 +94,24 @@ $(document).ready(() => {
         $('#shoe').text(model.shoe);
         $('#hair').text(model.hair);
         $('#eyes').text(model.eyes);
-        $('#eyes').css('color', model.eyes)
+        $('#eyes').css('color', model.eyes);
+        $('#descripModel').text(model.describe);
+        $('#videoModel').attr('src', 'images/models-page-full/'+model.video+'.mp4');
+        $('.model-detail .national').text('Nationality: ' + model.location);
+        $('')
+        let imgHtml = '';
+        model.img.forEach(img => imgHtml += '<img alt="" src="images/models-page-full/'+img+'.jpg">');
+        $('.photos-grid-col-3').html(imgHtml);
+        try {
+            model.img.slice(3).forEach((img, i) => {
+                $('.img-area'+(i+1) + ' img').attr('src','images/models-page-full/' + img + '.jpg');
+            });
+
+        } catch (e) {
+
+        }
     }
+
 
 });
 const addWishList = (index, clicked) =>{
@@ -128,7 +146,7 @@ const generateModels = (expaned) => {
         setTimeout(() => {
             $('#model'+i).css('background-image', 'url(./images/models-page-full/' + model.image + '.jpg)');
             let htmlInfo =
-                '           <div class="blur-cover"  style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51); width: 22.5rem; height: 640px; filter: blur(2px); transform: translate(-20px,-20px)" ></div>\n' +
+                '           <div class="blur-cover defaultWith_div_4"  style="visibility: hidden; position: absolute; background-color: rgba(175,175,175,0.51);  height: 640px; filter: blur(2px); transform: translate(-20px,-20px)" ></div>\n' +
                 ' <div class="model-item-content" >     <div class="model-item-title" ><h6>'+model.name+'</h6><div class="bg-grey"><img class="heart-icon" src="images/icon_dark/heart-dark-icon.png" onclick="addWishList('+i+', true)"> </div></div>\n' +
                 '                <p style="visibility: hidden">Height: '+model.height+'</p>\n' +
                 '                <p  style="visibility: hidden">Bust: '+model.bust+'</p>\n' +
@@ -156,6 +174,7 @@ const generateModels = (expaned) => {
 
             setTimeout(() => {
                 $('.model-item .model-item-content').css('width', defaultWith / 4 - 50);
+                $('.defaultWith_div_4').css('width', defaultWith/4+1);
                 if(model.wished === true) {
                     $('#model' + i + ' .heart-icon').attr('src', 'images/fill-heart-dark-icon.png');
                 } else {
@@ -193,7 +212,9 @@ let models =[
         "image": "img/Insta1",
         "imageHover": "img/Insta2",
         "birthdate": "October 10, 1995",
-        "describe": "Eiji is a model with a bright appearance and positive energy. He appeared on the catwalk during Korea Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Eiji is a model with a bright appearance and positive energy. He appeared on the catwalk during Korea Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video": "video/video-insta",
+        "img": ["InstaEiji/insta1","InstaEiji/insta2","InstaEiji/insta3","InstaEiji/insta4","InstaEiji/insta5","InstaEiji/insta6","InstaEiji/insta7","InstaEiji/insta8","InstaEiji/insta9"]
     },
 
     {
@@ -211,7 +232,9 @@ let models =[
         "image": "img/sensi1",
         "imageHover": "img/sensi2",
         "birthdate": "May 10, 1999",
-        "describe": "Sensi Mia is a truly versatile person, she is a gifted tennis player and a talented designer of jewelry. Sensi worked  for such legendary brands as Valentino, Trussardi, Alexander McQueen, Paul Ka, The Row, Twin Set. Sensi’s father worked for Valentino."
+        "describe": "Sensi Mia is a truly versatile person, she is a gifted tennis player and a talented designer of jewelry. Sensi worked  for such legendary brands as Valentino, Trussardi, Alexander McQueen, Paul Ka, The Row, Twin Set. Sensi’s father worked for Valentino.",
+        "video": "video/video-tan",
+        "img": ["SensiMia/sensi1","SensiMia/sensi2","SensiMia/sensi3","SensiMia/sensi4","SensiMia/sensi5","SensiMia/sensi6","SensiMia/sensi7","SensiMia/sensi8","SensiMia/sensi9"]
     },
 
     {
@@ -229,7 +252,9 @@ let models =[
         "image": "img/Zing1",
         "imageHover": "img/Zing2",
         "birthdate": "June 02, 1997",
-        "describe": "Zing A just started his work as a model, and he already works with numerous photographers in China, walked for China Fashion Week and graced the pages of Millenium magazine."
+        "describe": "Zing A just started his work as a model, and he already works with numerous photographers in China, walked for China Fashion Week and graced the pages of Millenium magazine.",
+        "video": "video/video-insta",
+        "img": ["ZingA/Zing1","ZingA/Zing2","ZingA/Zing3","ZingA/Zing4","ZingA/Zing5","ZingA/Zing6","ZingA/Zing7","ZingA/Zing8","ZingA/Zing9"]
     },
 
     {
@@ -247,7 +272,9 @@ let models =[
         "image": "img/Aliona1",
         "imageHover": "img/Aliona2",
         "birthdate": "October 15, 1998",
-        "describe": "Taylor Aliona is a model with a bright appearance and positive energy. She appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Taylor Aliona is a model with a bright appearance and positive energy. She appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video": "video/video-tylor",
+        "img":["TylorAliona/1","TylorAliona/2","TylorAliona/3","TylorAliona/4","TylorAliona/5","TylorAliona/6","TylorAliona/7","TylorAliona/8","TylorAliona/9"]
     },
 
     {
@@ -265,7 +292,9 @@ let models =[
         "image": "img/Hanna1",
         "imageHover": "img/Hanna2",
         "birthdate": "January 31, 2000",
-        "describe":"Hanna Cris is a truly versatile person, she is a gifted tennis player and a talented designer of jewelry. Hanna worked  for such legendary brands as Valentino, Trussardi, Alexander McQueen, Paul Ka, The Row, Twin Set."
+        "describe":"Hanna Cris is a truly versatile person, she is a gifted tennis player and a talented designer of jewelry. Hanna worked  for such legendary brands as Valentino, Trussardi, Alexander McQueen, Paul Ka, The Row, Twin Set.",
+        "video": "video/video-women",
+        "img":["HannaCris/1","HannaCris/2","HannaCris/3","HannaCris/4","HannaCris/5","HannaCris/6","HannaCris/7","HannaCris/8","HannaCris/1"]
     },
 
     {
@@ -283,7 +312,9 @@ let models =[
         "image": "img/Tan1",
         "imageHover": "img/Tan2",
         "birthdate": "December 02, 2001",
-        "describe": "Tan Suan is a talented China model. She can boast a blooming career, working for top brands such as Armani Exchange and appearing in worldwide reputed editorials: Elle China, Glamour Mexico, Hunger London, HIA magazine London and many others."
+        "describe": "Tan Suan is a talented China model. She can boast a blooming career, working for top brands such as Armani Exchange and appearing in worldwide reputed editorials: Elle China, Glamour Mexico, Hunger London, HIA magazine London and many others.",
+        "video": "video/video-tan",
+        "img":["TanSuan/Tan1","TanSuan/Tan2","TanSuan/Tan3","TanSuan/Tan4","TanSuan/Tan5","TanSuan/Tan6","TanSuan/Tan7","TanSuan/Tan8","TanSuan/Tan9"]
     },
 
     {
@@ -301,9 +332,29 @@ let models =[
         "image": "img/Ivy1",
         "imageHover":"img/Ivy2",
         "birthdate": "December 02, 2001",
-        "describe":"Ivy Kenna is a model with a bright appearance and positive energy. She appeared on the catwalk during Spain Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe":"Ivy Kenna is a model with a bright appearance and positive energy. She appeared on the catwalk during Spain Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "img":["IvyKenna/1","IvyKenna/2","IvyKenna/3","IvyKenna/4","IvyKenna/5","IvyKenna/1","IvyKenna/2","IvyKenna/3","IvyKenna/4"]
     },
 
+    {
+        "name": "Moca Chinel",
+        "categories": "Main",
+        "gender": "Female",
+        "location": "Spain",
+        "height": "169",
+        "bust": "74",
+        "waist": "58",
+        "hips": "89",
+        "shoe": "37",
+        "hair": "Black Curly",
+        "eyes": "Black",
+        "image": "img/Moca1",
+        "imageHover": "img/Moca2",
+        "birthdate": "November 09, 1996",
+        "describe": "Moca Chinel is a gorgeous Spain model, who successfully works in the world. She shot editorial for Grazia Netherlands, Harper’s Bazaar Spain and walked for London Fashion Week.",
+        "video": "video/video-women",
+        "img":["MocaChinel/moca1","MocaChinel/moca2","MocaChinel/moca3","MocaChinel/moca4","MocaChinel/moca5","MocaChinel/moca6","MocaChinel/moca1","MocaChinel/moca2","MocaChinel/moca3"]
+    },
 
     {
         "name": "Ayo Chan",
@@ -320,7 +371,9 @@ let models =[
         "image": "img/Ayo1",
         "imageHover": "img/Ayo2",
         "birthdate": "November 10, 1999",
-        "describe": "Ayo Chan is a model with a bright appearance and positive energy. He appeared on the catwalk during Taiwan Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Ayo Chan is a model with a bright appearance and positive energy. He appeared on the catwalk during Taiwan Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video": "video/video-insta",
+        "img":["AyoChan/chan1","AyoChan/chan2","AyoChan/chan3","AyoChan/chan4","AyoChan/chan5","AyoChan/chan6","AyoChan/chan7","AyoChan/chan8","AyoChan/chan9"]
     },
 
     {
@@ -338,7 +391,9 @@ let models =[
         "image": "img/Yuri1",
         "imageHover": "img/Yuri2",
         "birthdate": "August 29, 1995",
-        "describe": "Yuri Manei is following her dream to become a well-known model. Despite of young age, he’s a self-confident and well-organized person. He has shot multiple fashion stories for industry-leading publications such as Elle Spain and L’officiel Thailand."
+        "describe": "Yuri Manei is following her dream to become a well-known model. Despite of young age, he’s a self-confident and well-organized person. He has shot multiple fashion stories for industry-leading publications such as Elle Spain and L’officiel Thailand.",
+        "video": "video/video-insta",
+        "img":["YuriManei/yuri1","YuriManei/yuri2","YuriManei/yuri3","YuriManei/yuri4","YuriManei/yuri5","YuriManei/yuri6","YuriManei/yuri7","YuriManei/yuri2","YuriManei/yuri1"]
     },
 
     {
@@ -356,7 +411,9 @@ let models =[
         "image": "img/Molena1",
         "imageHover": "img/Molena2",
         "birthdate": "July 21, 2000",
-        "describe": "J.Molena is a model with a bright appearance and positive energy. She appeared on the catwalk during Italy Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "J.Molena is a model with a bright appearance and positive energy. She appeared on the catwalk during Italy Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video": "video/video-women",
+        "img":["Molena/molena1","Molena/molena2","Molena/molena3","Molena/molena4","Molena/molena5","Molena/molena6","Molena/molena7","Molena/molena8","Molena/molena1"]
     },
 
     {
@@ -374,7 +431,9 @@ let models =[
         "image": "img/Nix1",
         "imageHover": "img/Nix2",
         "birthdate": "February 21, 1998",
-        "describe": "Taylor Nix is a young promising model with more than 5 years of experience in modeling. The boy boasts numerous shootings for international magazines."
+        "describe": "Taylor Nix is a young promising model with more than 5 years of experience in modeling. The boy boasts numerous shootings for international magazines.",
+        "video": "video/video-insta",
+        "img":["TylorNix/1","TylorNix/2","TylorNix3","TylorNix/5","TylorNix/7","TylorNix/8","TylorNix/9","TylorNix/10","TylorNix/11"]
     },
 
     {
@@ -392,7 +451,9 @@ let models =[
         "image": "img/Helen1",
         "imageHover": "img/Helen2",
         "birthdate": "February 19, 1998",
-        "describe": "Helen Ast is a young model with more than 5 years of experience in modeling. Helen Ast devotes her free time to yoga, her abilities help her in her work as a model, the girl starred for many brands of sportswear."
+        "describe": "Helen Ast is a young model with more than 5 years of experience in modeling. Helen Ast devotes her free time to yoga, her abilities help her in her work as a model, the girl starred for many brands of sportswear.",
+        "video":"video/video-women",
+        "img":["Molena/molena1","Molena/molena2","Molena/molena3","Molena/molena4","Molena/molena5","Molena/molena6","Molena/molena7","Molena/molena8","Molena/molena1"]
     },
 
     {
@@ -410,7 +471,9 @@ let models =[
         "image": "img/Brian1",
         "imageHover": "img/Brian2",
         "birthdate": "February 19, 1998",
-        "describe": "Brian Lawson is a model with a bright appearance and positive energy. He appeared on the catwalk during Canada Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Brian Lawson is a model with a bright appearance and positive energy. He appeared on the catwalk during Canada Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video":"video/video-insta",
+        "img":["TylorNix/1","TylorNix/2","TylorNix3","TylorNix/5","TylorNix/7","TylorNix/8","TylorNix/9","TylorNix/10","TylorNix/11"]
     },
 
     {
@@ -428,7 +491,9 @@ let models =[
         "image": "img/Lily1",
         "imageHover": "img/Lily2",
         "birthdate": "February 19, 1998",
-        "describe": "Lily Caki is a model with a bright appearance and positive energy. She appeared on the catwalk during Wachington DC Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Lily Caki is a model with a bright appearance and positive energy. She appeared on the catwalk during Wachington DC Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video":"video/video-women",
+        "img":["Molena/molena1","Molena/molena2","Molena/molena3","Molena/molena4","Molena/molena5","Molena/molena6","Molena/molena7","Molena/molena8","Molena/molena1"]
     },
 
     {
@@ -446,7 +511,9 @@ let models =[
         "image": "img/Albert1",
         "imageHover": "img/Albert2",
         "birthdate": "February 19, 1996",
-        "describe": "Albert Jankos is a model with a bright appearance and positive energy. He appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Albert Jankos is a model with a bright appearance and positive energy. He appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video":"video/video-insta",
+        "img":["TylorNix/1","TylorNix/2","TylorNix3","TylorNix/5","TylorNix/7","TylorNix/8","TylorNix/9","TylorNix/10","TylorNix/11"]
     },
 
     {
@@ -464,7 +531,9 @@ let models =[
         "image": "img/Anna1",
         "imageHover": "img/Anna2",
         "birthdate": "February 19, 1998",
-        "describe": "Anna Vivchar is a model with a bright appearance and positive energy. She appeared on the catwalk during Wachington DC Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Anna Vivchar is a model with a bright appearance and positive energy. She appeared on the catwalk during Wachington DC Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video":"video/video-women",
+        "img":["Molena/molena1","Molena/molena2","Molena/molena3","Molena/molena4","Molena/molena5","Molena/molena6","Molena/molena7","Molena/molena8","Molena/molena1"]
     },
 
     {
@@ -482,6 +551,8 @@ let models =[
         "image": "img/Karsten1",
         "imageHover": "img/Karsten2",
         "birthdate": "February 19, 1996",
-        "describe": "Karsten Wine is a model with a bright appearance and positive energy. He appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium."
+        "describe": "Karsten Wine is a model with a bright appearance and positive energy. He appeared on the catwalk during Newyork Fashion Week, appeared on the pages of Vogue Magazine and Opium.",
+        "video":"video/video-insta",
+        "img":["TylorNix/1","TylorNix/2","TylorNix3","TylorNix/5","TylorNix/7","TylorNix/8","TylorNix/9","TylorNix/10","TylorNix/11"]
     }
 ]

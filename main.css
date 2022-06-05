@@ -589,6 +589,9 @@ li::marker {
     border-top: none;
     border-right: none;
 }
+.border-bottom-only {
+    border-bottom: 2px solid var(--border-white);
+}
 .none-border-bottom {
     border-bottom: none!important;
 }
@@ -723,7 +726,7 @@ li::marker {
 .model-info .param {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin-top: 72px;
+    margin-top: 24px;
     margin-bottom: 72px;
 }
 .model-info .model-description {
@@ -884,4 +887,7 @@ li::marker {
 }
 .none-border {
     border: none!important;
+}
+.border-right {
+    border-right: 2px solid var(--border-white);
 }

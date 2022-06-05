@@ -57,8 +57,11 @@
 }
 .title {
     border: 2px solid var(--border-white);
+    border-left: none;
+    border-right: none;
      grid-area: title;
 }
+
 .description {
      grid-area: description;
 }

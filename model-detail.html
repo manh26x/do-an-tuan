@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/studio.css">
     <style>
+            a{
+                color: inherit; /* blue colors for links too */
+                text-decoration: inherit; /* no underline */
+            }
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,7 +26,7 @@
             <li ><a href="#" class="text-font-normal " onclick="searchClick()">SEARCH</a></li>
             <li ><a href="#" style="margin-left: 80px" id="wishlistLink" class="text-font-normal ">WISH LIST[0]</a></li>
             <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
-                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" class="x-icon" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon"  id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
             </li>
         </ul>
     </div>
@@ -32,6 +36,7 @@
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
     <div class="dropdown-content">
         <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToWhoWeAre()"><div class="show-menu-item-animation">WHO WE ARE</div></a>
         <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToNews()"><div class="show-menu-item-animation">NEWS</div></a>
         <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
         <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
@@ -63,11 +68,11 @@
     </div>
     <div class=" model-detail">
         <div class="left">
-            <video muted preload="auto" src="images/model_imgs_file/model_videos/pexels-shvets-production-7198482.mp4" autoplay></video>
+            <video id="videoModel" muted preload="auto" src="images/model_imgs_file/model_videos/pexels-shvets-production-7198482.mp4" autoplay></video>
         </div>
         <div class="right model-info">
-            <p class="national">Nationality: Korea</p>
-            <div class="param">
+            <p class="national" style="font-size: 24px">Nationality: Korea</p>
+            <div class="param" style="font-size: 24px">
                 <span>Height</span>
                 <span>Bust</span>
                 <span>Waist</span>
@@ -84,7 +89,8 @@
                 <span id="eyes">color</span>
             </div>
             <p class="birthdate">Birthdate: October 10, 1995</p>
-            <p class="model-description">Eiji is a model with a bright appearance and positive energy. He appeared on the catwalk during Korea Fashion Week, appeared on the pages of Vogue Magazine and Opium.</p>
+            <br>
+            <p class="model-description" id="descripModel">Eiji is a model with a bright appearance and positive energy. He appeared on the catwalk during Korea Fashion Week, appeared on the pages of Vogue Magazine and Opium.</p>
             <p>Achievements: <span style="text-decoration: underline">Trending</span>   <span style="text-decoration: underline"> Top 10 Models</span>   <span style="text-decoration: underline">Runway</span><br />
               &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="text-decoration: underline">The money list</span></p>
             <p style="margin-top: 72px">Social media: <span class="letter-social">O</span> <span class="letter-social">f</span></p>
@@ -95,13 +101,13 @@
         <div class="left "><button class="btn-custom align-center add-to-list" ><img src="images/icon_dark/heart-dark-icon.png"> ADD TO LIST </button></div>
         <div class="right ">
             <div class="discovery-area">
-                <button  class="btn-custom btn-icon-right "><div></div><p class="heading">COMPCARD</p><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
+                <button  class="btn-custom btn-icon-right "><div></div><a href="compcard.html" target="_blank" class="heading">COMPCARD</a><img class="next-double-icon" src="images/icon_light/next-double-light-icon.png"></button>
             </div>
         </div>
     </div>
     <div class="page-header">
         <h1>WORK</h1>
-        <h6><h6 id="quantity">[Total]</h6></h6>
+        <h6><h6 id="quantity">[5]</h6></h6>
     </div>
     <div class="grid-model-detail-container ">
         <button  class="border-right-bottom btn-custom "><p class="paragraph">ALL</p></button>
@@ -206,7 +212,7 @@
     <div class="page-header">
         <h1>BOOK</h1>
     </div>
-    <div class="full-width-img">
+    <div class="photos-grid-col-3">
         <img src="images/studio-photos/img-photos.png">
     </div>
 </div>

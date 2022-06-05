@@ -19,7 +19,7 @@
             <li ><a href="#" class="text-font-normal " onclick="searchClick()">SEARCH</a></li>
             <li ><a href="#" style="margin-left: 80px" id="wishlistLink" class="text-font-normal ">WISH LIST[0]</a></li>
             <li><a href="#" onclick="menuClicked()" id="idMenu" class="dropdown ml-1 text-font-normal">MENU</a>
-                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon" id="xIconImg" class="x-icon" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
+                <a href="#"  style="width: 106px;" onclick="xSquareClicked()" id="idXSquare" class="ml-1"><img style="transform: translate(20px, 5px);" alt="x-icon"  id="xIconImg" height="41px" src="images/icon_light/x-square-light-icon.png"></a>
             </li>
         </ul>
     </div>
@@ -29,6 +29,7 @@
 <div id="myDropdown" class="show-dropdown-animation dropdown-dialog normal-box-padding  ">
     <div class="dropdown-content">
         <a  class="text-font-normal normal-box-padding " onclick="goToModel()" href="#models"><div class="show-menu-item-animation">MODELS</div></a>
+        <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToWhoWeAre()"><div class="show-menu-item-animation">WHO WE ARE</div></a>
         <a  class="text-font-normal normal-box-padding"  href="#" onclick="goToNews()"><div class="show-menu-item-animation">NEWS</div></a>
         <a  class="text-font-normal normal-box-padding"  onclick="goToRank()" href="#contact"><div class="show-menu-item-animation">RANKINGS</div></a>
         <a  class="text-font-normal normal-box-padding" href="#" onclick="gotoStudio()"><div class="show-menu-item-animation">STUDIO</div></a>
@@ -60,22 +61,19 @@
     </div>
     <div class="studio-review">
         <div class="left">
-            <p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, auctor in interdum vulputate quam. Elit volutpat commodo, aliquam fermentum nisl vel eget mauris justo. Pellentesque interdum blandit interdum vel in enim diam. Nec, turpis duis pretium, nunc. Rutrum felis, mollis eu, erat lobortis. Justo lorem erat quisque etiam diam sit senectus adipiscing. Nunc maecenas scelerisque luctus lectus non. Quam vivamus ultricies nunc, vivamus feugiat sit quis ac praesent. Hendrerit quis dapibus semper ultricies. Nunc maecenas scelerisque luctus lectus non. Quam vivamus ultricies nunc, vivamus feugiat sit quis ac praesent. Hendrerit quis dapibus semper ultricies.
-            </p><p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, auctor in interdum vulputate quam. Elit volutpat commodo, aliquam fermentum nisl vel eget mauris justo. Pellentesque interdum blandit interdum vel in enim diam. Nec, turpis duis pretium, nunc. Rutrum felis, mollis eu, erat lobortis. Justo lorem erat quisque etiam diam sit senectus adipiscing.
-            </p>
+            <p class="contact-text">IMODELS is a small modeling agency established in early 2016 in Vietnam. Our agency aims to lead the Vietnam modeling industry into a new era of promise and growth by searching for young talented faces inside and outside Vietnam. Its aim is to train and develop successful young faces in the fashion world.</p><p class="contact-text">We own a professional team filled with enthusiasm and passion that will help and create great opportunities for young talents to increase their income and build their reputation in the world.
+        </p><br><p class="contact-text">We own a professional team filled with enthusiasm and passion that will help and create great opportunities for young talents to increase their income and build their reputation in the world.</p>
         </div>
         <div class="right">
-            <img src="images/about-us/img1.png">
+            <img class="border-bottom-only border-top border-right" style="object-fit: cover; height: 100%" src="images/who%20we%20are/jason-goodman-6awfTPLGaCE-unsplash.jpg">
         </div>
     </div>
     <div class="studio-review">
-        <div class="left" style="padding: 0">
-            <img style="object-fit: cover" height="100%" src="images/about-us/img2.png">
+        <div class="left none-border-top" style="padding: 0">
+            <img style="object-fit: cover" height="100%" src="images/who%20we%20are/austin-distel-mpN7xjKQ_Ns-unsplash.jpg">
         </div>
-        <div class="right" style="padding: 40px; border: 2px solid var(--border-white)">
-            <p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, auctor in interdum vulputate quam. Elit volutpat commodo, aliquam fermentum nisl vel eget mauris justo. Pellentesque interdum blandit interdum vel in enim diam. Nec, turpis duis pretium, nunc. Rutrum felis, mollis eu, erat lobortis. Justo lorem erat quisque etiam diam sit senectus adipiscing. Nunc maecenas scelerisque luctus lectus non. Quam vivamus ultricies nunc, vivamus feugiat sit quis ac praesent. Hendrerit quis dapibus semper ultricies. Nunc maecenas scelerisque luctus lectus non. Quam vivamus ultricies nunc, vivamus feugiat sit quis ac praesent. Hendrerit quis dapibus semper ultricies.</p>
-            <p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, auctor in interdum vulputate quam. Elit volutpat commodo, aliquam fermentum nisl vel eget mauris justo. Pellentesque interdum blandit interdum vel in enim diam. Nec, turpis duis pretium, nunc. Rutrum felis, mollis eu, erat lobortis. Justo lorem erat quisque etiam diam sit senectus adipiscing.
-        </p>
+        <div class="right none-border-top" style="padding: 40px; border: 2px solid var(--border-white)">
+            <p class="contact-text">Although IMODELS is a new small modeling agency, we make a remarkable difference in each individual, young talent. Each person has a distinct personality colour but still ensures professionalism expressed through the way of working and cooperation with customers. </p>
         </div>
     </div>
 
@@ -85,7 +83,7 @@
     <div class="team-table">
         <div class="letter-filter-box">
         </div>
-        <div class="empty-box-150 border-top border-left-right"></div>
+        <div class="empty-box-150 border-top border-left-right none-border-top"></div>
         <div class="list-contact border-top-left-right">
             <div class="contact-item ">
                 <span class="contact-item-index">[01]</span>
