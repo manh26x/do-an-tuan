@@ -10,16 +10,49 @@ const gotoRankingOfAwardsOfYear = (year) => {
 $(document).ready(() => {
     let year = localStorage.getItem('year');
     $('#titleAwardOfYear').text('MODEL OF THE YEAR AWARDS ' + year);
-    $('.list-ranking-choose').hover(() => {},
-        () =>  $('.list-ranking-choose').css('display', 'none'));
-    $('.list-ranking-choose-right').hover(() => {},
-        () =>  $('.list-ranking-choose-right').css('display', 'none'));
+    $('.men-area').hover(() => {
+            const theme = window.localStorage.getItem("theme");
+            if (theme === "dark") {
+                $('.men-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+            } else {
+                $('.men-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+            }
+        },
+        () => {
+            const theme = window.localStorage.getItem("theme");
+            if (theme === "dark") {
+                $('.men-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+            } else {
+                $('.men-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+            }
+        });
+    $('.women-area').hover(() => {
+            const theme = window.localStorage.getItem("theme");
+            if (theme === "dark") {
+                $(' .women-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+            } else {
+                $(' .women-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+            }
+        },
+        () => {
+            const theme = window.localStorage.getItem("theme");
+            if (theme === "dark") {
+                $('.women-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+            } else {
+                $('.women-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+            }
+        });
+
 })
 let toggleRankMen =  true;
 const showListRankingMen = () => {
     if(toggleRankMen) {
         $('.list-ranking-choose').css('display', 'flex');
-        $('.men-area .icon-plus').css('transform', 'rotate(45deg)');
+        $('.men-area .icon-plus').css('transform', 'rotate(-45deg)');
     } else  {
         $('.list-ranking-choose').css('display', 'none');
         $('.men-area .icon-plus').css('transform', 'rotate(0deg)');
@@ -31,7 +64,7 @@ let toggleRankGirl = true;
 const showListRankingWomen = () => {
     if(toggleRankGirl) {
         $('.list-ranking-choose-right').css('display', 'flex');
-        $('.women-area .icon-plus').css('transform', 'rotate(45deg)');
+        $('.women-area .icon-plus').css('transform', 'rotate(-45deg)');
     } else  {
         $('.list-ranking-choose-right').css('display', 'none');
         $('.women-area .icon-plus').css('transform', 'rotate(0deg)');

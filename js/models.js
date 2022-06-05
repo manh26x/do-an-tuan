@@ -7,7 +7,7 @@ $('.categories-area').click(() => {
         children.each(function(idx, val){
             $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
         });
-        $('.categories-area .icon-small').css('transform', 'rotate(45deg)')
+        $('.categories-area .icon-small').css('transform', 'rotate(-45deg)')
 
     } else {
         $('.categories-dropdown-area').css({'visibility': 'hidden', 'height': '0'});
@@ -25,7 +25,7 @@ $('.gender-area').click(() => {
         children.each(function(idx, val){
             $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
         });
-        $('.gender-area .icon-small').css('transform', 'rotate(45deg)');
+        $('.gender-area .icon-small').css('transform', 'rotate(-45deg)');
     } else {
         $('.gender-area .icon-small').css('transform', 'rotate(0deg)');
         $('.gender-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
@@ -42,7 +42,7 @@ $('.location-area').click(() => {
         children.each(function(idx, val){
             $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
         });
-        $('.location-area .icon-small').css('transform', 'rotate(45deg)');
+        $('.location-area .icon-small').css('transform', 'rotate(-45deg)');
     } else {
         $('.location-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
         $('.location-area .icon-small').css('transform', 'rotate(0deg)');
@@ -59,7 +59,7 @@ $('.measurements-area').click(() => {
         children.each(function(idx, val){
             $(this).css('animation','showDropdown 0.1s ease-in ' + idx * 0.1 +'s forwards');
         });
-        $('.measurements-area .icon-small').css('transform', 'rotate(45deg)');
+        $('.measurements-area .icon-small').css('transform', 'rotate(-45deg)');
     } else {
         $('.measurements-dropdown-area').css({'visibility': 'hidden', 'height':'0'});
         $('.measurements-area .icon-small').css('transform', 'rotate(0deg)');
@@ -84,7 +84,7 @@ $(document).ready(() => {
 
     }
     let modelId = parseInt(localStorage.getItem('modelId'));
-    if(modelId) {
+    if(modelId !== -1) {
         let model = models[modelId];
         $('#modelName').text(model.name);
         $('#height').text(model.height);
@@ -94,7 +94,6 @@ $(document).ready(() => {
         $('#shoe').text(model.shoe);
         $('#hair').text(model.hair);
         $('#eyes').text(model.eyes);
-        $('#eyes').css('color', model.eyes);
         $('#descripModel').text(model.describe);
         $('#videoModel').attr('src', 'images/models-page-full/'+model.video+'.mp4');
         $('.model-detail .national').text('Nationality: ' + model.location);

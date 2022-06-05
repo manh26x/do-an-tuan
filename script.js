@@ -214,4 +214,8 @@ const conChoTuan = (stt) => {
     xPosition += stt-1;
     $('.stt'+stt).css('transform', 'translate('+xPosition+'px, 86px)');
 }
-$()
+const gotoTrending = () => {
+    let pattern = /.*.html/;
+    location.replace(location.pathname.replace(pattern, 'trending.html'));
+
+}
