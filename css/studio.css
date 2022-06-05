@@ -16,7 +16,7 @@
     border-top: none;
     border-bottom: none;
 }
-.studio-review .right img {
+.studio-review .right video {
     object-fit: cover;
     height: 100%;
 }

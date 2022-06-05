@@ -69,6 +69,7 @@ $( document ).ready(function() {
     $('.filter-bg').css('width', defaultWith/3-2);
     $('.model-item ').css('width', defaultWith/4);
     $('.ranking-title').css('width', defaultWith);
+    $('.half-width').css('width', defaultWith/2)
     $('.ranking-title .title-item').css('width', defaultWith/3-1);
     $('.studio-review').css('width', defaultWith);
     $('#calendar').css('width', defaultWith);
@@ -196,8 +197,9 @@ const gotoMemberDetail = () => {
     let pattern = /.*.html/;
     location.replace(location.pathname.replace(pattern, 'member-detail.html'));
 }
-const gotoModelDetail = () => {
+const gotoModelDetail = (modelId) => {
     let pattern = /.*.html/;
+    localStorage.setItem('modelId', modelId)
     location.replace(location.pathname.replace(pattern, 'model-detail.html'));
 }
 const gotoSendTheList = () => {

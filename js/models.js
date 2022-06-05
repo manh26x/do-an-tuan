@@ -79,6 +79,22 @@ $(document).ready(() => {
     for(let i =1; i<=4; i++) {
         conChoTuan(i);
     }
+    debugger
+
+    let modelId = parseInt(localStorage.getItem('modelId'));
+    if(modelId) {
+        let model = models[modelId-1];
+        $('#modelName').text(model.name);
+        $('#height').text(model.height);
+        $('#bust').text(model.bust);
+        $('#waist').text(model.waist);
+        $('#hips').text(model.hips);
+        $('#shoe').text(model.shoe);
+        $('#hair').text(model.hair);
+        $('#eyes').text(model.eyes);
+        $('#eyes').css('color', model.eyes)
+    }
+
 });
 const addWishList = (index, clicked) =>{
     models[index].wished = true;
@@ -93,6 +109,8 @@ const addWishList = (index, clicked) =>{
 
     generateModels(false);
     getWishList();
+
+
 
 }
 
@@ -120,7 +138,7 @@ const generateModels = (expaned) => {
                 '                <p  style="visibility: hidden">Hair: '+model.hair+'</p>\n' +
                 '                <p  style="visibility: hidden">Eyes: '+model.eyes+'</p> ' +
                 '<div class="country" style="z-index: 3;" ><h6>'+model.location+'</h6></div></div>' +
-                ' <div  style=" position: absolute;  width: 22.5rem; height: 640px; z-index: 11; transform: translate(-20px,-20px) cursor: pointer" onclick="gotoModelDetail()"></div>'+
+                ' <div  style=" position: absolute;  width: 22.5rem; height: 640px; z-index: 11; transform: translate(-20px,-20px) cursor: pointer" onclick="gotoModelDetail('+i+')"></div>'+
                 '                ';
             $('#model'+i).html(htmlInfo);
             $('#model'+i).hover(
