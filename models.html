@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Model</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="css/models.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,6 +58,7 @@
     <div class="page-header">
         <h1>MODELS</h1>
         <h6>Found models: <h6 style="margin-left: 0" id="quantityModel">[quantity]</h6></h6>
+        <p onclick="clearFilter()" style="cursor: pointer; width: 28%; align-self: end; justify-self: end; text-align: right">Clear Filter <img class="x-icon" height="20px" src="images/icon_light/x-light-icon.png"></p>
     </div>
     <div class="grid-model-container">
         <button  class="none-border-right categories-area btn-custom btn-icon-right"><p></p><p class="paragraph">CATEGORIES</p><img class="icon-small icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
@@ -64,18 +66,26 @@
         <button class="none-border-right location-area btn-custom btn-icon-right"><p></p><p class="paragraph">MODEL LOCATION</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
         <button class="  measurements-area btn-custom btn-icon-right"><p></p><p class="paragraph">MEASUREMENTS</p><img class="icon-small  icon-plus" alt="" src="images/icon_light/plus-light-icon.png"> </button>
         <div class="dropdown-filter stt1 defaultWith_div_4 categories-dropdown-area">
-            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Main</p> </button>
-            <button class="btn-custom none-border-bottom btn-left"><p class="paragraph">Development</p> </button>
-            <button class="btn-custom btn-left"><p class="paragraph">New faces</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left " onclick="filterModel(this, 'Main')"><p class="paragraph">Main</p> </button>
+            <button class="btn-custom none-border-bottom btn-left"  onclick="filterModel(this, 'Development')"><p class="paragraph">Development</p> </button>
+            <button class="btn-custom btn-left" onclick="filterModel(this, 'New faces')"><p class="paragraph">New faces</p> </button>
         </div>
         <div class="dropdown-filter stt2 defaultWith_div_4 gender-dropdown-area">
-            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Female</p> </button>
-            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Male</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelGender(this, 'Female')"><p class="paragraph">Female</p> </button>
+            <button class="btn-custom none-opacity btn-left"  onclick="filterModelGender(this, 'Male')"><p class="paragraph">Male</p> </button>
         </div>
         <div class="dropdown-filter stt3 defaultWith_div_4 location-dropdown-area">
             <div class=" btn-left none-opacity btn-disable-hover" style="border-bottom: none"><input style="transition: none" type="text" class="input-text " placeholder="Search"></div>
-            <button class="btn-custom none-border-bottom none-opacity btn-left"><p class="paragraph">Vietnam</p> </button>
-            <button class="btn-custom none-opacity btn-left"><p class="paragraph">Singapore</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Korea')"><p class="paragraph">Korea</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Russia')"><p class="paragraph">Russia</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'China')"><p class="paragraph">China</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'USA')"><p class="paragraph">USA</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Spain')"><p class="paragraph">Spain</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Taiwan')"><p class="paragraph">Taiwan</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Thailand')"><p class="paragraph">Thailand</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Italy')"><p class="paragraph">Italy</p> </button>
+            <button class="btn-custom none-border-bottom none-opacity btn-left" onclick="filterModelLocation(this, 'Canada')"><p class="paragraph">Canada</p> </button>
+            <button class="btn-custom none-opacity btn-left"><p class="paragraph" onclick="filterModelLocation(this, 'Singapore')">Singapore</p> </button>
         </div>
         <div class="dropdown-filter stt4 defaultWith_div_4 measurements-dropdown-area">
             <div style="border-bottom: none" class=" btn-left  none-opacity  btn-disable-hover"><p class="paragraph">Height [167] </p> <input class="slider input-range" type="range" min="1" max="167" value="50"> </div>

@@ -16,6 +16,27 @@ $('.categories-area').click(() => {
     toggle1 =!toggle1;
 
 });
+let gender = '';
+let category = '';
+let country = '';
+$('.categories-area').hover(() => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.categories-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+        } else {
+            $('.categories-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        }
+    },
+    () => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.categories-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+        } else {
+            $('.categories-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+        }
+    });
 let toggle2 = true;
 $('.gender-area').click(() => {
     if(toggle2) {
@@ -33,6 +54,25 @@ $('.gender-area').click(() => {
     toggle2 = !toggle2;
 
 });
+
+$('.gender-area').hover(() => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.gender-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+        } else {
+            $('.gender-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        }
+    },
+    () => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.gender-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+        } else {
+            $('.gender-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+        }
+    });
 let toggle3 = true;
 $('.location-area').click(() => {
     if(toggle3) {
@@ -50,6 +90,24 @@ $('.location-area').click(() => {
     toggle3 = !toggle3;
 
 });
+$('.location-area').hover(() => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.location-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+        } else {
+            $('.location-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        }
+    },
+    () => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.location-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+        } else {
+            $('.location-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+        }
+    });
 let toggle4 = true;
 $('.measurements-area').click(() => {
     if(toggle4) {
@@ -66,9 +124,26 @@ $('.measurements-area').click(() => {
     }
     toggle4 = !toggle4
 });
+$('.measurements-area').hover(() => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.measurements-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+        } else {
+            $('.measurements-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+        }
+    },
+    () => {
+        const theme = window.localStorage.getItem("theme");
+        if (theme === "dark") {
+            $('.measurements-area .icon-plus').attr("src","images/icon_light/plus-light-icon.png");
+
+        } else {
+            $('.measurements-area .icon-plus').attr("src","images/icon_dark/plus-dark-icon.png");
+
+        }
+    });
 
 $(document).ready(() => {
-
     try {
         if(localStorage.getItem('models')) {
             models = JSON.parse(localStorage.getItem('models'));
@@ -85,7 +160,8 @@ $(document).ready(() => {
     }
     let modelId = parseInt(localStorage.getItem('modelId'));
     if(modelId !== -1) {
-        let model = models[modelId];
+        try {
+            let model = models[modelId];
         $('#modelName').text(model.name);
         $('#height').text(model.height);
         $('#bust').text(model.bust);
@@ -101,7 +177,7 @@ $(document).ready(() => {
         let imgHtml = '';
         model.img.forEach(img => imgHtml += '<img alt="" src="images/models-page-full/'+img+'.jpg">');
         $('.photos-grid-col-3').html(imgHtml);
-        try {
+            $('#imgAvt').attr('src', 'images/models-page-full/'+model.image+'.jpg');
             model.img.slice(3).forEach((img, i) => {
                 $('.img-area'+(i+1) + ' img').attr('src','images/models-page-full/' + img + '.jpg');
             });
@@ -113,6 +189,27 @@ $(document).ready(() => {
 
 
 });
+const filterModelGender = (element, g) => {
+    gender = g
+    $('.gender-dropdown-area button').removeClass('active-model');
+    element.classList.add('active-model');
+
+    generateModels(false);
+}
+const filterModelLocation = (element, c) => {
+    country = c
+    $('.location-dropdown-area button').removeClass('active-model')
+    element.classList.add('active-model');
+
+    generateModels(false);
+}
+const filterModel = (event, type) => {
+    category = type;
+    $('.categories-dropdown-area button').removeClass('active-model')
+    event.classList.add('active-model');
+
+    generateModels(false);
+}
 const addWishList = (index, clicked) =>{
     models[index].wished = true;
     localStorage.setItem('models', JSON.stringify(models));
@@ -132,12 +229,38 @@ const addWishList = (index, clicked) =>{
 }
 
 let modelSize = 12;
+const clearFilter = () => {
+    gender = '';
+    category = '';
+    country = '';
+    generateModels(false);
+    $('.categories-dropdown-area button').removeClass('active-model');
+    $('.location-dropdown-area button').removeClass('active-model');
+    $('.gender-dropdown-area button').removeClass('active-model');
+
+}
 const generateModels = (expaned) => {
     let modelsChildren = '';
     if(expaned) {
         modelSize += 4;
     }
     let lastI = 0;
+    models = JSON.parse(localStorage.getItem('models'));
+    if(category !== '') {
+        models = models.filter(m => m.categories === category );
+    } else {
+        if(localStorage.getItem('models')) {
+            models = JSON.parse(localStorage.getItem('models'));
+        } else  {
+            localStorage.setItem('models', JSON.stringify(models));
+        }
+    }
+    if(gender !== '') {
+        models = models.filter((m => m.gender=== gender));
+    }
+    if(country !== '') {
+        models = models.filter((m => m.location === country));
+    }
     models.slice(0, modelSize).forEach((model,i) => {
         modelsChildren += '<div class="model-item" id="model' + i+'"></div>';
         model.id = i;
@@ -220,7 +343,7 @@ let models =[
         "name": "Sensi Mia",
         "categories": "Main",
         "gender": "Female",
-        "location": "Rusia",
+        "location": "Russia",
         "height": "170",
         "bust": "100",
         "waist": "58",
@@ -347,8 +470,8 @@ let models =[
         "shoe": "37",
         "hair": "Black Curly",
         "eyes": "Black",
-        "image": "img/Moca1",
-        "imageHover": "img/Moca2",
+        "image": "img/Chinel1",
+        "imageHover": "img/Chinel2",
         "birthdate": "November 09, 1996",
         "describe": "Moca Chinel is a gorgeous Spain model, who successfully works in the world. She shot editorial for Grazia Netherlands, Harper’s Bazaar Spain and walked for London Fashion Week.",
         "video": "video/video-women",
@@ -439,7 +562,7 @@ let models =[
         "name": "Helen Ast",
         "categories": "Development",
         "gender": "Female",
-        "location": "Rusia",
+        "location": "Russia",
         "height": "177",
         "bust": "72",
         "waist": "56",

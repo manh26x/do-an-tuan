@@ -77,6 +77,7 @@ $( document ).ready(function() {
     $('.studio-review').css('width', defaultWith);
     $('#calendar').css('width', defaultWith);
     $('#calculatePrice').css('width', defaultWith);
+    $('.page-header').css('width', defaultWith);
     $('.contact-detail-form, .model-review').css('width', defaultWith);
     $('.team-table').css('width', defaultWith);
     $('.grid-model-detail-container').css('width',defaultWith)

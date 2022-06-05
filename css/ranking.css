@@ -61,14 +61,6 @@
     border-right: none;
      grid-area: title;
 }
-.btn-custom:hover {
-    background-color: var(--border-white);
-    transition: background-color 0.5s;
-}
-.btn-custom:hover p {
-    color: var(--bg-grey-light);
-    transition: color 0.5s;
-}
 
 .description {
      grid-area: description;
